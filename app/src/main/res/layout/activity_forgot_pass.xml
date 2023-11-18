@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ForgotPass">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="50dp"
+        android:id="@+id/ly_1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lupa Kata Sandi"
+            android:fontFamily="@font/poppinsbold"
+            android:textSize="30sp"
+            android:gravity="center"
+            android:textColor="@color/primary"
+            android:padding="10dp"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/txt_fs"/>
+
+        <TextView
+            android:id="@+id/text_fpw"
+            android:layout_width="317dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/poppinsregular"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Masukkan Email atau Nama Pengguna yang terkait dengan akun Anda."
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email atau Nama Pengguna"
+            android:fontFamily="@font/poppinsbold"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:layout_marginTop="20dp"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/text_emailpw"/>
+
+        <EditText
+            android:id="@+id/edt_nama"
+            android:layout_width="353dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:background="@drawable/button_shape"
+            android:backgroundTint="@color/loginbutton"
+            android:fontFamily="@font/poppinsmedium"
+            android:hint="amirzulham@gmail.com"
+            android:padding="15dp"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/btn_aturkatasandi"
+        android:layout_width="wrap_content"
+        android:layout_height="61dp"
+        android:layout_below="@+id/ly_1"
+        android:layout_centerHorizontal="true"
+        android:width="350dp"
+        android:background="@drawable/button_login"
+        android:fontFamily="@font/poppinsbold"
+        android:text="Atur Ulang Kata Sandi"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:layout_marginTop="60dp"
+        android:textSize="20sp" />
+
+</RelativeLayout>

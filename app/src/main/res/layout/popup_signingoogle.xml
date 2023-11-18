@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="400dp"
+    android:layout_gravity="center"
+    android:layout_centerHorizontal="true"
+    android:background="@drawable/popupbg"
+    android:id="@+id/re_1"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/img_popupsgo"
+        android:layout_width="match_parent"
+        android:layout_height="310dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="0dp"
+        android:src="@drawable/tesgoogle" />
+
+    <Button
+        android:id="@+id/btn_batal"
+        android:layout_width="119dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/img_popupsgo"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="200dp"
+        android:width="200dp"
+        android:background="@drawable/button_ws"
+        android:fontFamily="@font/poppinsbold"
+        android:text="Batal"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/btn_konfirmasi"
+        android:layout_width="156dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/img_popupsgo"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="190dp"
+        android:layout_marginEnd="3dp"
+        android:width="190dp"
+        android:background="@drawable/button_login"
+        android:fontFamily="@font/poppinsbold"
+        android:text="Konfirmasi"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="12sp" />
+
+
+</RelativeLayout>
