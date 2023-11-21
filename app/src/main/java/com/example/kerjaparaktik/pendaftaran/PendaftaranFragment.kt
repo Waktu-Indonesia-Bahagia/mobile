@@ -9,10 +9,12 @@ import android.widget.Adapter
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
+import android.widget.Button
 import android.widget.Spinner
 import android.widget.Toast
 import com.example.kerjaparaktik.MainActivity
 import com.example.kerjaparaktik.R
+import androidx.fragment.app.FragmentTransaction
 
 
 class PendaftaranFragment : Fragment() {
@@ -28,6 +30,7 @@ class PendaftaranFragment : Fragment() {
 
         val autoMagang: AutoCompleteTextView = view.findViewById(R.id.magang)
         val autoPosisi: AutoCompleteTextView = view.findViewById(R.id.posisi)
+        val btnSubmit : Button=view.findViewById(R.id.btnsubmit)
 
         val maganglist = listOf("PKL","Kerja Praktik")
         val posisilist = listOf("Cyber Security")
@@ -35,7 +38,7 @@ class PendaftaranFragment : Fragment() {
         val adapter1 = ArrayAdapter(requireContext(),R.layout.magang,maganglist)
         val adapter2 = ArrayAdapter(requireContext(),R.layout.magang,posisilist)
 
-
+        // Adapter Untuk Drop Down Menu
         autoMagang.setAdapter(adapter1)
         autoMagang.onItemClickListener = AdapterView.OnItemClickListener {
                 adapterView, view, i, l ->
@@ -43,11 +46,26 @@ class PendaftaranFragment : Fragment() {
             Toast.makeText(requireContext(), "$itemSelected", Toast.LENGTH_SHORT).show()
         }
 
-        autoMagang.setAdapter(adapter2)
-        autoMagang.onItemClickListener = AdapterView.OnItemClickListener {
+        autoPosisi.setAdapter(adapter2)
+        autoPosisi.onItemClickListener = AdapterView.OnItemClickListener {
                 adapterView, view, b, l ->
-            val itemSelected = adapterView.getItemAtPosition(b)
-            Toast.makeText(requireContext(), "$itemSelected", Toast.LENGTH_SHORT).show()
+            val itemSelected2 = adapterView.getItemAtPosition(b)
+            Toast.makeText(requireContext(), "$itemSelected2", Toast.LENGTH_SHORT).show()
+        }
+
+        // Adapter Button
+        btnSubmit.setOnClickListener {
+            val targetpendaftaran = pendaftaran2()
+            val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
+
+            // Ganti fragment saat ini dengan fragment tujuan
+            transaction.replace(R.id.frame_container, targetpendaftaran)
+
+            // Tambahkan ke back stack, sehingga dapat kembali ke fragment sebelumnya
+            transaction.addToBackStack(null)
+
+            // Lakukan transaksi
+            transaction.commit()
         }
 
 //        // Adapter untuk Spinner
