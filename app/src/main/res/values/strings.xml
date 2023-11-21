@@ -2,4 +2,15 @@
     <string name="app_name">kerjaparaktik</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pendaftaran_top">Perhatian! Setelah melakukan pendaftaran, Anda akan menerima informasi lanjutan melalui halaman Notifikasi atau melalui pesan WhatsApp</string>
+    <string name="spinner_hint">Magang</string>
+    <string name="posisi_hint">Posisi</string>
+    <array name="magang_options">
+        <item>PKL</item>
+        <item>Kerja Praktik</item>
+    </array>
+    <array name="posisi_options">
+        <item>Cyber Security</item>
+    </array>
+    <string name="pendaftaran2">Success! Data pendaftaran kerja praktik berhasil dikirim! silahkan tunggu informasi selanjutnya melalui halaman Notifikasi atau melalui WhatsApp</string>
 </resources>
