@@ -13,7 +13,10 @@
         android:theme="@style/Theme.Kerjaparaktik"
         tools:targetApi="31">
         <activity
-            android:name=".PopupSignInGoogle"
+            android:name=".ForgotPass2"
+            android:exported="false" />
+        <activity
+            android:name=".OnBoarding1"
             android:exported="false" />
         <activity
             android:name=".OnBoarding3"
@@ -37,7 +40,7 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".OnBoarding1"
+            android:name=".SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

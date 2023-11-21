@@ -17,26 +17,13 @@ class ForgotPass : AppCompatActivity() {
         setContentView(R.layout.activity_forgot_pass)
         supportActionBar?.hide()
 
-        btnPopup = findViewById(R.id.btn_aturkatasandi)
-        btnPopup.setOnClickListener {
-            displayPopupDialog()
-        }
-    }
+        val btnloginws: Button = findViewById(R.id.btn_aturkatasandi)
 
-    private fun displayPopupDialog() {
-        val dialog = Dialog(this)
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-        dialog.setContentView(R.layout.popup_lupapw)
-        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-
-        val btnMasuk = dialog.findViewById<Button>(R.id.btn_loginpop)
-        btnMasuk.setOnClickListener {
-            dialog.dismiss()
-        }
-        dialog.show()
-        btnMasuk.setOnClickListener {
-            val intent = Intent(this@ForgotPass, Login::class.java)
+        btnloginws.setOnClickListener {
+            val intent = Intent(this@ForgotPass, ForgotPass2::class.java)
             startActivity(intent)
         }
+
+
     }
 }
