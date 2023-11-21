@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:cardCornerRadius="35dp"
+        app:cardElevation="2dp"
+        android:layout_marginTop="230dp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                app:lottie_rawRes="@raw/email"
+                app:lottie_autoPlay="true"
+                app:lottie_speed="1.25" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="18dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/ubah_sandi"/>
+
+            <Button
+                android:id="@+id/btn_profil"
+                android:layout_marginTop="15dp"
+                android:layout_width="220dp"
+                android:layout_height="43dp"
+                android:textSize="17dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Profil"
+                android:gravity="center"
+                android:background="@drawable/button"
+                />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
