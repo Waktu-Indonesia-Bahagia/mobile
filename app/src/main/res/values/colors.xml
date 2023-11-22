@@ -5,4 +5,5 @@
     <color name="primary">#34A853</color>
     <color name="green">#19AC4B</color>
     <color name="greensub">#A8DF8E</color>
+    <color name="backtext">#FFF3CD</color>
 </resources>
