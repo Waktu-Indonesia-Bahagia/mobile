@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import com.example.kerjaparaktik.R
 
@@ -24,6 +25,9 @@ class UbahSandiFragment : Fragment(), View.OnClickListener {
 
         val btnUbah: Button = view.findViewById(R.id.btn_ubah)
         btnUbah.setOnClickListener(this)
+
+        val ivBack: ImageView = view.findViewById(R.id.iv_arrow_back_sandi)
+        ivBack.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -32,6 +36,16 @@ class UbahSandiFragment : Fragment(), View.OnClickListener {
             val fragmentManager = parentFragmentManager
             fragmentManager.beginTransaction().apply {
                 replace(R.id.frame_container,popUpFragment, PopUpFragment::class.java.simpleName)
+                addToBackStack(null)
+                commit()
+            }
+        }
+
+        if(v?.id == R.id.iv_arrow_back_sandi){
+            val profileFragment= ProfileFragment()
+            val fragmentManager = parentFragmentManager
+            fragmentManager.beginTransaction().apply {
+                replace(R.id.frame_container,profileFragment, ProfileFragment::class.java.simpleName)
                 addToBackStack(null)
                 commit()
             }
