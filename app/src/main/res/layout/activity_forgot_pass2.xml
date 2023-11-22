@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".landingpage.ForgotPass2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="50dp"
+        android:id="@+id/ly_1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Atur Kata Sandi"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="30sp"
+            android:gravity="center"
+            android:textColor="@color/primary"
+            android:padding="10dp"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/txt_fs"/>
+
+        <TextView
+            android:id="@+id/text_fpw"
+            android:layout_width="317dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Masukan kata sandi baru Anda "
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/edt_email"
+            android:layout_width="347dp"
+            android:layout_height="57dp"
+            android:layout_marginTop="35dp"
+            android:background="@drawable/button_shape"
+            android:backgroundTint="@color/loginbutton"
+            android:fontFamily="@font/poppins_medium"
+            android:hint="kata sandi baru"
+            android:paddingLeft="15dp"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/text_katasandi"
+            android:layout_width="347dp"
+            android:layout_height="57dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/button_shape"
+            android:backgroundTint="@color/loginbutton"
+            android:fontFamily="@font/poppins_medium"
+            android:hint="Konfirmasi Kata Sandi"
+            android:paddingLeft="15dp"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/btn_kirimkatasandi"
+        android:layout_width="wrap_content"
+        android:layout_height="61dp"
+        android:layout_below="@+id/ly_1"
+        android:layout_centerHorizontal="true"
+        android:width="350dp"
+        android:background="@drawable/button_login"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Kirim Kata Sandi"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:layout_marginTop="60dp"
+        android:textSize="20sp" />
+
+</RelativeLayout>

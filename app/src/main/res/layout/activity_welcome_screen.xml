@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".landingpage.WelcomeScreen">
+
+    <ImageView
+        android:id="@+id/img_ws"
+        android:layout_width="335dp"
+        android:layout_height="359dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/welcomescreen" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/img_ws"
+        android:gravity="center"
+        android:id="@+id/ly_1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Menjelajahi Kerja Praktik Impian Anda"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="30sp"
+            android:gravity="center"
+            android:textColor="@color/primary"
+            android:padding="10dp"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/txt_ws"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jelajahi Peran Magang yang Tersedia Berdasarkan Minat dan studi Anda"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/text_atau"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_loginws"
+        android:layout_width="wrap_content"
+        android:layout_height="61dp"
+        android:layout_below="@+id/ly_1"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="203dp"
+        android:width="2000dp"
+        android:background="@drawable/button_login"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Masuk"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btn_daftarws"
+        android:layout_width="wrap_content"
+        android:layout_height="61dp"
+        android:layout_below="@+id/ly_1"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="190dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="30dp"
+        android:width="200dp"
+        android:background="@drawable/button_ws"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Daftar"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+
+</RelativeLayout>

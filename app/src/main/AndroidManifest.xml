@@ -13,7 +13,35 @@
         android:theme="@style/Theme.Kerjaparaktik"
         tools:targetApi="31">
         <activity
+            android:name=".landingpage.ForgotPass2"
+            android:exported="false" />
+        <activity
+            android:name=".landingpage.OnBoarding1"
+            android:exported="false" />
+        <activity
+            android:name=".landingpage.OnBoarding3"
+            android:exported="false" />
+        <activity
+            android:name=".landingpage.OnBoarding2"
+            android:exported="false" />
+        <activity
+            android:name=".landingpage.WelcomeScreen"
+            android:exported="false" />
+        <activity
+            android:name=".landingpage.ForgotPass"
+            android:exported="false" />
+        <activity
+            android:name=".landingpage.Register"
+            android:exported="false" />
+        <activity
+            android:name=".landingpage.Login"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".landingpage.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

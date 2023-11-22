@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundlogin"
+    tools:context=".landingpage.Register">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="98dp"
+        android:layout_marginEnd="139dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Registrasi"
+        android:textColor="@color/primary"
+        android:textSize="30sp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/textView"
+        android:padding="30dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/ly_1">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:background="@drawable/button_shape"
+            android:hint="Nama"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingLeft="15dp"
+            android:textSize="16sp"
+            android:backgroundTint="@color/loginbutton"
+            android:id="@+id/edt_nama"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:background="@drawable/button_shape"
+            android:hint="Email"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingLeft="15dp"
+            android:textSize="16sp"
+            android:backgroundTint="@color/loginbutton"
+            android:id="@+id/edt_email"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:background="@drawable/button_shape"
+            android:hint="Kata Sandi"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingLeft="15dp"
+            android:textSize="16sp"
+            android:backgroundTint="@color/loginbutton"
+            android:id="@+id/text_katasandi"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:background="@drawable/button_shape"
+            android:hint="Kata Sandi"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingLeft="15dp"
+            android:textSize="16sp"
+            android:backgroundTint="@color/loginbutton"
+            android:id="@+id/text_katasandi2"
+            />
+
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_daftar"
+        android:layout_width="wrap_content"
+        android:layout_height="61dp"
+        android:layout_below="@+id/ly_1"
+        android:layout_centerHorizontal="true"
+        android:width="350dp"
+        android:background="@drawable/button_login"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Daftar"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/btn_daftar"
+        android:gravity="center"
+        android:id="@+id/ly_2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sudah punya akun"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            android:layout_centerHorizontal="true"
+            android:padding="13dp"
+            android:id="@+id/txt_punyaakun"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="atau"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:id="@+id/text_atau"/>
+
+    </LinearLayout>
+
+    <ImageButton
+        android:layout_width="173dp"
+        android:layout_height="41dp"
+        android:layout_below="@id/ly_2"
+        android:layout_marginTop="0dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/signgoogle" />
+
+
+</RelativeLayout>

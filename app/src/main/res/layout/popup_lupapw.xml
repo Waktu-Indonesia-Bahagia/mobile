@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="350dp"
+    android:layout_gravity="center"
+    android:layout_centerHorizontal="true"
+    android:background="@drawable/popupbg"
+    android:id="@+id/re_1"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:id="@+id/img_popupfpw"
+        android:src="@drawable/popuplupapw"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Berhasil !"
+        android:fontFamily="@font/poppins_semibold"
+        android:textSize="12sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:textColor="@color/black"
+        android:layout_below="@id/img_popupfpw"
+        android:id="@+id/usr_berhasil" />
+
+    <TextView
+        android:layout_width="214dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/usr_berhasil"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="22dp"
+        android:fontFamily="@font/poppins_regular"
+        android:gravity="center"
+        android:text="Silakan periksa kata sandi baru di Email Anda"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:id="@+id/txt_periksaemail"/>
+
+    <Button
+        android:id="@+id/btn_loginpop"
+        android:layout_width="210dp"
+        android:layout_height="38dp"
+        android:layout_below="@+id/txt_periksaemail"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="69dp"
+        android:width="150dp"
+        android:background="@drawable/button_login"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Masuk"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="12sp" />
+
+
+</RelativeLayout>
