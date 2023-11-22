@@ -13,4 +13,13 @@
         <item>Cyber Security</item>
     </array>
     <string name="pendaftaran2">Success! Data pendaftaran kerja praktik berhasil dikirim! silahkan tunggu informasi selanjutnya melalui halaman Notifikasi atau melalui WhatsApp</string>
+
+    <!-- Profile -->
+    <string name="ubah_sandi">Ubah kata sandi \nBerhasil !</string>
+    <string name="nama">Nama \nAmir Ahmad Zulham</string>
+    <string name="no_hp">No Handphone \n085267880099</string>
+    <string name="ttl">Tempat/Tanggal Lahir \nPalembang, 27 Mei 2002</string>
+    <string name="jekel">Jenis Kelamin \nPria</string>
+    <string name="alamat">Alamat \nJL. Letnan Muhtar Saleh</string>
+    <!-- Profile -->
 </resources>

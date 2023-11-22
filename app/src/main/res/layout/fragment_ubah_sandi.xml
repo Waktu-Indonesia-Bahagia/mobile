@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".profile.UbahSandiFragment">
+
+
+    <ImageView
+        android:id="@+id/iv_arrow_back_sandi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/arrow_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_ubah_sandi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppins_black"
+        android:text="Ubah Kata Sandi"
+        android:textColor="@color/green"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.409"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_sandi_lama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Kata Sandi Lama"
+        android:textSize="17dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.107"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_ubah_sandi" />
+
+    <EditText
+        android:id="@+id/edt_sandi_lama"
+        android:layout_width="355dp"
+        android:layout_height="45dp"
+        android:paddingLeft="10dp"
+        android:layout_marginStart="4sp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/edit_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_sandi_lama" />
+
+    <TextView
+        android:id="@+id/tv_hub_admin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Lupa  Kata sandi? Hubungi Admin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.164"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_sandi_lama" />
+
+    <TextView
+        android:id="@+id/tv_sandi_baru"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Kata Sandi Baru"
+        android:textSize="17dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.108"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_hub_admin" />
+
+    <EditText
+        android:id="@+id/edt_sandi_baru"
+        android:layout_width="355dp"
+        android:layout_height="45dp"
+        android:paddingLeft="10dp"
+        android:layout_marginStart="4sp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/edit_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_sandi_baru" />
+
+    <TextView
+        android:id="@+id/tv_sandi_baru_lagi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Masukkan Kata Sandi Baru Lagi"
+        android:textSize="17dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.238"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_sandi_baru" />
+
+    <EditText
+        android:id="@+id/edt_sandi_baru_lagi"
+        android:layout_width="355dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="4sp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/edit_text"
+        android:paddingLeft="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_sandi_baru_lagi" />
+
+    <Button
+        android:id="@+id/btn_ubah"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:background="@drawable/button"
+        android:fontFamily="@font/poppins_black"
+        android:text="Ubah"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_sandi_baru_lagi" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

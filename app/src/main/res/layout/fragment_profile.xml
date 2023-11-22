@@ -1,15 +1,199 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".profile.ProfileFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Pendaftaran Fragment"
-        android:textSize="30sp"
-        android:gravity="center"/>
+    <ImageView
+        android:id="@+id/iv_arrow_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/arrow_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <ImageView
+        android:id="@+id/iv_profile"
+        android:layout_width="145dp"
+        android:layout_height="116dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_arrow_back" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_black"
+        android:gravity="center"
+        android:text="Amir Ahmad Zulham"
+        android:textSize="17dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_profile" />
+
+    <TextView
+        android:id="@+id/tv_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:alpha="0.5"
+        android:text="amirzulham@gmail.com"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+    <ImageView
+        android:id="@+id/iv_wave"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:layout_marginTop="204dp"
+        android:src="@drawable/wave"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_user"
+        android:layout_width="48dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="28dp"
+        android:src="@drawable/user"
+        android:background="@drawable/textview_bg"
+        android:clickable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.115"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_wave" />
+
+    <TextView
+        android:id="@+id/tv_user"
+        android:layout_width="270dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/textview_bg"
+        android:clickable="true"
+        android:gravity="center"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Informasi Akun"
+        android:textSize="17dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.801"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_wave" />
+
+    <ImageView
+        android:id="@+id/iv_lock"
+        android:layout_width="48dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/textview_bg"
+        android:clickable="true"
+        android:src="@drawable/lock"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.115"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_user" />
+
+    <TextView
+        android:id="@+id/tv_info"
+        android:layout_width="270dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/textview_bg"
+        android:clickable="true"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:text="Informasi Aplikasi"
+        android:textSize="17dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.801"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_lock" />
+
+    <ImageView
+        android:id="@+id/iv_info"
+        android:layout_width="48dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/info"
+        android:background="@drawable/textview_bg"
+        android:clickable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.115"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_lock" />
+
+    <TextView
+        android:id="@+id/tv_lock"
+        android:layout_width="270dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/textview_bg"
+        android:clickable="true"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:text="Ubah Kata Sandi"
+        android:textSize="17dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.787"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_user" />
+
+    <ImageView
+        android:id="@+id/iv_setting"
+        android:layout_width="48dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="36dp"
+        android:src="@drawable/setting"
+        android:background="@drawable/textview_bg"
+        android:clickable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.115"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_info" />
+
+    <TextView
+        android:id="@+id/tv_setting"
+        android:layout_width="270dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/textview_bg"
+        android:clickable="true"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:text="Pengaturan"
+        android:textSize="17dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.801"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_info" />
+
+    <Button
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/button"
+        android:fontFamily="@font/poppins_black"
+        android:text="Keluar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_setting" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
