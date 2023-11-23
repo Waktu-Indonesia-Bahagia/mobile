@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">kerjaparaktik</string>
+    <string name="app_name">Intern View</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="pendaftaran_top">Perhatian! Setelah melakukan pendaftaran, Anda akan menerima informasi lanjutan melalui halaman Notifikasi atau melalui pesan WhatsApp</string>
