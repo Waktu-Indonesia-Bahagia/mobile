@@ -164,13 +164,15 @@
                 android:layout_marginStart="20dp"
                 android:fontFamily="@font/poppins_regular"
                 android:text="Choose File"
+                android:background="@drawable/rounded_button"
                 android:textSize="14sp"
                 android:id="@+id/btnktp"/>
             <EditText
                 android:layout_width="189dp"
                 android:layout_height="64dp"
                 android:hint="No File Choosen"
-                android:paddingStart="15dp"/>
+                android:paddingStart="15dp"
+                android:background="@drawable/rounded_edittext_bg2"/>
         </LinearLayout>
 
         <TextView
@@ -192,6 +194,7 @@
                 android:layout_height="64dp"
                 android:layout_marginStart="20dp"
                 android:fontFamily="@font/poppins_regular"
+                android:background="@drawable/rounded_button"
                 android:text="Choose File"
                 android:textSize="14sp"
                 android:id="@+id/btnktm"/>
@@ -199,6 +202,7 @@
                 android:layout_width="189dp"
                 android:layout_height="64dp"
                 android:hint="No File Choosen"
+                android:background="@drawable/rounded_edittext_bg2"
                 android:paddingStart="15dp"/>
         </LinearLayout>
 
@@ -221,12 +225,14 @@
                 android:layout_height="64dp"
                 android:layout_marginStart="20dp"
                 android:fontFamily="@font/poppins_regular"
+                android:background="@drawable/rounded_button"
                 android:text="Choose File"
                 android:textSize="14sp"
                 android:id="@+id/btnsurat"/>
             <EditText
                 android:layout_width="189dp"
                 android:layout_height="64dp"
+                android:background="@drawable/rounded_edittext_bg2"
                 android:hint="No File Choosen"
                 android:paddingStart="15dp"
                 />
