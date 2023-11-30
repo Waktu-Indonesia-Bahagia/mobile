@@ -167,12 +167,14 @@
                 android:background="@drawable/rounded_button"
                 android:textSize="14sp"
                 android:id="@+id/btnktp"/>
-            <EditText
+
+            <ImageView
+                android:id="@+id/gambarKtp"
                 android:layout_width="189dp"
                 android:layout_height="64dp"
-                android:hint="No File Choosen"
-                android:paddingStart="15dp"
-                android:background="@drawable/rounded_edittext_bg2"/>
+                android:src="@drawable/baseline_person_24"
+                />
+
         </LinearLayout>
 
         <TextView
