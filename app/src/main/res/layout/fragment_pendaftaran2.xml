@@ -1,21 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".pendaftaran.pendaftaran2">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="320dp"
-        android:layout_height="150dp"
-        android:text="@string/pendaftaran2"
-        android:gravity="center"
-        android:fontFamily="@font/poppins_bold"
-        android:textSize="16sp"
-        android:layout_gravity="center"
-        android:background="@color/primary" />
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:cardCornerRadius="35dp"
+        app:cardElevation="2dp"
+        android:layout_marginTop="200dp"
+        app:cardUseCompatPadding="true">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="20dp">
 
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="180dp"
+                android:layout_height="150dp"
+                app:lottie_rawRes="@raw/succes"
+                app:lottie_autoPlay="true"
+                app:lottie_speed="1.25" />
 
-</FrameLayout>
+            <TextView
+                android:layout_width="320dp"
+                android:layout_height="150dp"
+                android:text="@string/pendaftaran2"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="16sp"
+                android:layout_gravity="center"
+                android:background="@color/primary" />
+
+            <Button
+                android:id="@+id/btn_kembali"
+                android:layout_marginTop="15dp"
+                android:layout_width="220dp"
+                android:layout_height="43dp"
+                android:textSize="17dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="kembali"
+                android:textColor="@color/black"
+                android:backgroundTint="@color/white"
+                android:gravity="center"
+                />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

@@ -64,17 +64,18 @@
             android:layout_marginTop="15dp"
             android:background="@drawable/rounded_edittext_bg"
             />
+
         <EditText
             android:layout_width="320dp"
             android:layout_height="64dp"
             android:layout_marginStart="20dp"
-            android:hint="Masukkan Nomor Telepon/WA"
-            android:paddingStart="30dp"
-            android:textSize="16sp"
-            android:fontFamily="@font/poppins_regular"
             android:layout_marginTop="15dp"
             android:background="@drawable/rounded_edittext_bg"
-            />
+            android:fontFamily="@font/poppins_regular"
+            android:hint="Masukkan Nomor Telepon/WA"
+            android:paddingStart="30dp"
+            android:textSize="16sp" />
+
         <EditText
             android:layout_width="320dp"
             android:layout_height="64dp"
@@ -149,6 +150,7 @@
             android:layout_height="wrap_content"
             android:text="Foto Kartu Tanda Penduduk"
             android:layout_marginTop="15dp"
+            android:layout_marginStart="18dp"
             android:fontFamily="@font/poppins_medium"
             android:textSize="14sp"/>
 
@@ -163,7 +165,7 @@
                 android:layout_height="64dp"
                 android:layout_marginStart="20dp"
                 android:fontFamily="@font/poppins_regular"
-                android:text="Choose File"
+                android:text="Pilih File"
                 android:background="@drawable/rounded_button"
                 android:textSize="14sp"
                 android:id="@+id/btnktp"/>
@@ -182,6 +184,7 @@
             android:layout_height="wrap_content"
             android:text="Foto Kartu Tanda Mahasiswa"
             android:layout_marginTop="15dp"
+            android:layout_marginStart="18dp"
             android:fontFamily="@font/poppins_medium"
             android:textSize="14sp"/>
 
@@ -197,11 +200,11 @@
                 android:layout_marginStart="20dp"
                 android:fontFamily="@font/poppins_regular"
                 android:background="@drawable/rounded_button"
-                android:text="Choose File"
+                android:text="Pilih File"
                 android:textSize="14sp"
                 android:id="@+id/btnktm"/>
             <EditText
-                android:layout_width="189dp"
+                android:layout_width="185dp"
                 android:layout_height="64dp"
                 android:hint="No File Choosen"
                 android:background="@drawable/rounded_edittext_bg2"
@@ -213,6 +216,7 @@
             android:layout_height="wrap_content"
             android:text="Foto Surat Permohonan"
             android:layout_marginTop="15dp"
+            android:layout_marginStart="18dp"
             android:fontFamily="@font/poppins_medium"
             android:textSize="14sp"/>
 
@@ -228,11 +232,11 @@
                 android:layout_marginStart="20dp"
                 android:fontFamily="@font/poppins_regular"
                 android:background="@drawable/rounded_button"
-                android:text="Choose File"
+                android:text="Pilih File"
                 android:textSize="14sp"
                 android:id="@+id/btnsurat"/>
             <EditText
-                android:layout_width="189dp"
+                android:layout_width="185dp"
                 android:layout_height="64dp"
                 android:background="@drawable/rounded_edittext_bg2"
                 android:hint="No File Choosen"
