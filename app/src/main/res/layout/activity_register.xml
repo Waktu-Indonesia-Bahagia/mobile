@@ -58,6 +58,7 @@
             android:layout_height="57dp"
             android:background="@drawable/button_shape"
             android:hint="Kata Sandi"
+            android:inputType="textPassword"
             android:layout_marginTop="15dp"
             android:fontFamily="@font/poppins_medium"
             android:paddingLeft="15dp"
