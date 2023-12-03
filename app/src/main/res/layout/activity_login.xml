@@ -46,13 +46,13 @@
             android:layout_width="match_parent"
             android:layout_height="57dp"
             android:background="@drawable/button_shape"
-            android:hint="Email"
+            android:hint="Username"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/poppins_medium"
             android:paddingLeft="15dp"
             android:textSize="16sp"
             android:backgroundTint="@color/loginbutton"
-            android:id="@+id/edt_email"/>
+            android:id="@+id/edt_username"/>
 
         <EditText
             android:layout_width="match_parent"
@@ -62,6 +62,7 @@
             android:layout_marginTop="15dp"
             android:fontFamily="@font/poppins_medium"
             android:paddingLeft="15dp"
+            android:inputType="textPassword"
             android:textSize="16sp"
             android:backgroundTint="@color/loginbutton"
             android:id="@+id/text_katasandi"

@@ -51,4 +51,7 @@ dependencies {
     //Image Picker
     implementation ("com.github.dhaval2404:imagepicker:2.1")
 
+    //Volley Untuk Database
+    implementation ("com.android.volley:volley:1.2.1")
+
 }
