@@ -5,9 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
 import com.example.kerjaparaktik.R
+import com.example.kerjaparaktik.pendaftaran.PendaftaranFragment
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), View.OnClickListener {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -16,4 +20,35 @@ class HomeFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val btnList: TextView = view.findViewById(R.id.tv_lihatSemua)
+        btnList.setOnClickListener(this)
+
+        val ivMagang: ImageView = view.findViewById(R.id.magang)
+        ivMagang.setOnClickListener(this)
+    }
+
+    override fun onClick(v: View?) {
+        if(v?.id == R.id.tv_lihatSemua){
+            val listMagang= ListMagang()
+            val fragmentManager = parentFragmentManager
+            fragmentManager.beginTransaction().apply {
+                replace(R.id.frame_container,listMagang, ListMagang::class.java.simpleName)
+                addToBackStack(null)
+                commit()
+            }
+        }
+
+        if(v?.id == R.id.magang){
+            val jobDetails= JobDetails()
+            val fragmentManager = parentFragmentManager
+            fragmentManager.beginTransaction().apply {
+                replace(R.id.frame_container,jobDetails, JobDetails::class.java.simpleName)
+                addToBackStack(null)
+                commit()
+            }
+        }
+    }
 }

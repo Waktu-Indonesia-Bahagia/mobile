@@ -20,6 +20,7 @@ import com.android.volley.VolleyError
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.example.kerjaparaktik.DbContract
+//import com.example.kerjaparaktik.DbContract
 import com.example.kerjaparaktik.MainActivity
 import com.example.kerjaparaktik.R
 import com.example.kerjaparaktik.home.HomeFragment
@@ -48,6 +49,7 @@ class Login : AppCompatActivity() {
             val usernameInput = username.text.toString()
             val passwordInput = password.text.toString()
 
+
             if (!(usernameInput.isEmpty() || passwordInput.isEmpty())) {
                 val requestQueue: RequestQueue = Volley.newRequestQueue(applicationContext)
                 val stringRequest = object : StringRequest(
@@ -70,7 +72,7 @@ class Login : AppCompatActivity() {
             } else {
                 Toast.makeText(applicationContext, "Username atau Password salah!", Toast.LENGTH_SHORT).show()
             }
-        }
+
 
         txt_akunbaru.setOnClickListener {
             val intent = Intent(this@Login, Register::class.java)
@@ -81,6 +83,7 @@ class Login : AppCompatActivity() {
             val intent = Intent(this@Login, ForgotPass::class.java)
             startActivity(intent)
         }
+    }
     }
 
     private fun displayPopupDialog() {
