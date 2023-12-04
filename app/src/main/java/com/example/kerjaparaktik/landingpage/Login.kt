@@ -20,6 +20,7 @@ import com.android.volley.VolleyError
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.example.kerjaparaktik.DbContract
+//import com.example.kerjaparaktik.DbContract
 import com.example.kerjaparaktik.MainActivity
 import com.example.kerjaparaktik.R
 import com.example.kerjaparaktik.home.HomeFragment
@@ -45,8 +46,12 @@ class Login : AppCompatActivity() {
         }
 
         btn_login.setOnClickListener {
+            // val intent = Intent(this@Login, MainActivity::class.java)
+            //  startActivity(intent)
+
             val usernameInput = username.text.toString()
             val passwordInput = password.text.toString()
+
 
             if (!(usernameInput.isEmpty() || passwordInput.isEmpty())) {
                 val requestQueue: RequestQueue = Volley.newRequestQueue(applicationContext)

@@ -6,31 +6,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".home.ListMagang">
 
-    <ImageView
-        android:id="@+id/back"
-        android:layout_width="25dp"
-        android:layout_height="20dp"
-        android:src="@drawable/back"
-        android:layout_marginTop="30dp"
-        app:layout_constraintHorizontal_bias="0.085"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
 
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/arrow_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.069"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/Pmagang"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Program Magang"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/poppins_bold"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="Program Magang"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.087"
-        app:layout_constraintTop_toBottomOf="@id/back"
-        />
+        app:layout_constraintHorizontal_bias="0.127"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_back" />
+
     <ScrollView
         android:id="@+id/lmagang"
         android:layout_width="wrap_content"
@@ -58,13 +57,14 @@
                 android:src="@drawable/pmagang2"
                 android:layout_marginTop="20dp"
                 />
+
             <ImageView
                 android:id="@+id/pmagang3"
                 android:layout_width="308dp"
                 android:layout_height="131dp"
-                android:src="@drawable/pmagang3"
                 android:layout_marginTop="20dp"
-                />
+                android:src="@drawable/pmagang3" />
+
             <ImageView
                 android:id="@+id/pmagang4"
                 android:layout_width="308dp"

@@ -8,15 +8,13 @@
 
     <ImageView
         android:id="@+id/Job"
-        android:layout_width="480dp"
-        android:layout_height="324dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="290dp"
         android:src="@drawable/job"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintHorizontal_bias="-0.07"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintHorizontal_bias="-0.07"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/deskrip"
@@ -37,13 +35,12 @@
         android:layout_width="342dp"
         android:layout_height="355dp"
         android:src="@drawable/text"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteX="25dp"
-        tools:layout_editor_absoluteY="370dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/deskrip" />
 
     <Button
-        android:id="@+id/btndaftar"
+        android:id="@+id/btn_daftar"
         android:layout_width="352dp"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
