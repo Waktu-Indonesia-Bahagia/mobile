@@ -13,12 +13,6 @@ import com.example.kerjaparaktik.pendaftaran.PendaftaranFragment
 
 class ListMagang : Fragment(), View.OnClickListener {
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -32,6 +26,9 @@ class ListMagang : Fragment(), View.OnClickListener {
 
         val ivMagang1: ImageView = view.findViewById(R.id.pmagang)
         ivMagang1.setOnClickListener(this)
+
+        val ivBack: ImageView = view.findViewById(R.id.iv_back)
+        ivBack.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -44,6 +41,16 @@ class ListMagang : Fragment(), View.OnClickListener {
                 commit()
             }
         }
+        if(v?.id == R.id.iv_back){
+            val homeFragment= HomeFragment()
+            val fragmentManager = parentFragmentManager
+            fragmentManager.beginTransaction().apply {
+                replace(R.id.frame_container,homeFragment, HomeFragment::class.java.simpleName)
+                addToBackStack(null)
+                commit()
+            }
+        }
+
     }
 
 

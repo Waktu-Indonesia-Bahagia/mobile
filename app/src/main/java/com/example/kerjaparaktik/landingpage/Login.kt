@@ -19,7 +19,7 @@ import com.android.volley.Response
 import com.android.volley.VolleyError
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-import com.example.kerjaparaktik.DbContract
+//import com.example.kerjaparaktik.DbContract
 //import com.example.kerjaparaktik.DbContract
 import com.example.kerjaparaktik.MainActivity
 import com.example.kerjaparaktik.R
@@ -46,32 +46,33 @@ class Login : AppCompatActivity() {
         }
 
         btn_login.setOnClickListener {
-            val usernameInput = username.text.toString()
-            val passwordInput = password.text.toString()
+//            val usernameInput = username.text.toString()
+//            val passwordInput = password.text.toString()
 
-
-            if (!(usernameInput.isEmpty() || passwordInput.isEmpty())) {
-                val requestQueue: RequestQueue = Volley.newRequestQueue(applicationContext)
-                val stringRequest = object : StringRequest(
-                    Request.Method.GET,
-                    "${DbContract.urlLogin}?username=$usernameInput&password=$passwordInput",
-                    Response.Listener<String> { response ->
-                        if (response == "Anda berhasil Login!") {
-                            Toast.makeText(applicationContext, "Login Berhasil!", Toast.LENGTH_SHORT).show()
-                            startActivity(Intent(applicationContext, MainActivity::class.java))
-                        } else {
-                            Toast.makeText(applicationContext, "Login Gagal!", Toast.LENGTH_SHORT).show()
-                        }
-                    },
-                    Response.ErrorListener { error ->
-                        Toast.makeText(applicationContext, error.toString(), Toast.LENGTH_SHORT).show()
-                    }
-                ) {}
-
-                requestQueue.add(stringRequest)
-            } else {
-                Toast.makeText(applicationContext, "Username atau Password salah!", Toast.LENGTH_SHORT).show()
-            }
+            val intent = Intent(this@Login, MainActivity::class.java)
+            startActivity(intent) }
+//            if (!(usernameInput.isEmpty() || passwordInput.isEmpty())) {
+//                val requestQueue: RequestQueue = Volley.newRequestQueue(applicationContext)
+//                val stringRequest = object : StringRequest(
+//                    Request.Method.GET,
+//                    "${DbContract.urlLogin}?username=$usernameInput&password=$passwordInput",
+//                    Response.Listener<String> { response ->
+//                        if (response == "Anda berhasil Login!") {
+//                            Toast.makeText(applicationContext, "Login Berhasil!", Toast.LENGTH_SHORT).show()
+//                            startActivity(Intent(applicationContext, MainActivity::class.java))
+//                        } else {
+//                            Toast.makeText(applicationContext, "Login Gagal!", Toast.LENGTH_SHORT).show()
+//                        }
+//                    },
+//                    Response.ErrorListener { error ->
+//                        Toast.makeText(applicationContext, error.toString(), Toast.LENGTH_SHORT).show()
+//                    }
+//                ) {}
+//
+//                requestQueue.add(stringRequest)
+//            } else {
+//                Toast.makeText(applicationContext, "Username atau Password salah!", Toast.LENGTH_SHORT).show()
+//            }
 
 
         txt_akunbaru.setOnClickListener {
@@ -83,7 +84,6 @@ class Login : AppCompatActivity() {
             val intent = Intent(this@Login, ForgotPass::class.java)
             startActivity(intent)
         }
-    }
     }
 
     private fun displayPopupDialog() {

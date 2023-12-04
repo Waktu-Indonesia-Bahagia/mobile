@@ -22,21 +22,25 @@
     <string name="jekel">Jenis Kelamin \nPria</string>
     <string name="alamat">Alamat \nJL. Letnan Muhtar Saleh</string>
     <!-- Profile -->
-    <string name="list">
-        <li>Pengantar antarmuka pengguna, pengalaman pengguna</li>
-        \n
-        <li>Pengantar pengalaman pelanggan</li>
-        \n
-        <li>Menjadi user interface dan user experience designer</li>
-        \n
-        <li>Pengantar Desainn thinking</li>
-        \n
-        <li>Pengantar alat desain</li>
-        \n
-        <li>Empati dan pengertian</li>
-        \n
-        <li>Pembingkaian masalah</li>
-        \n
-        <li>Brainstrom untuk menghasilkan ide</li>
-    </string>
+
+<!--   Profile <string name="list">-->
+<!--    &lt;!&ndash;Reources&ndash;&gt;-->
+<!--    \n-->
+<!--    <li>Pengantar antarmuka pengguna, pengalaman pengguna</li>-->
+<!--    \n-->
+<!--    <li>Pengantar pengalaman pelanggan</li>-->
+<!--    \n-->
+<!--    <li>Menjadi user interface dan user experience designer</li>-->
+<!--    \n-->
+<!--    <li>Pengantar Desainn thinking</li>-->
+<!--    \n-->
+<!--    <li>Pengantar alat desain</li>-->
+<!--    \n-->
+<!--    <li>Empati dan pengertian</li>-->
+<!--    \n-->
+<!--    <li>Pembingkaian masalah</li>-->
+<!--    \n-->
+<!--    <li>Brainstrom untuk menghasilkan ide</li>-->
+<!--    <string name="list">-->
+
 </resources>
