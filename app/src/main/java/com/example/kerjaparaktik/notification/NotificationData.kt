@@ -1,3 +1,5 @@
 package com.example.kerjaparaktik.notification
 
-data class NotificationData(var title: String, var image: Int)
+import android.text.Spanned
+
+data class NotificationData(var title: Spanned, var image: Int)

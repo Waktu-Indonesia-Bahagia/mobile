@@ -13,7 +13,6 @@ class NotificationAdapter (private var mList: List<NotificationData>) :
 
     inner class LanguageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val title : TextView = itemView.findViewById(R.id.textNotif)
-        val image : ImageView = itemView.findViewById(R.id.gambarNotif)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):LanguageViewHolder {
@@ -22,7 +21,6 @@ class NotificationAdapter (private var mList: List<NotificationData>) :
     }
 
     override fun onBindViewHolder(holder: NotificationAdapter.LanguageViewHolder, position: Int) {
-        holder.image.setImageResource(mList[position].image)
         holder.title.text = mList[position].title
     }
     override fun getItemCount(): Int {

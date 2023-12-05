@@ -11,23 +11,16 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
+        android:background="@color/green"
         android:layout_height="wrap_content"
         android:padding="8dp">
 
-        <ImageView
-            android:id="@+id/gambarNotif"
-            android:layout_width="40dp"
-            android:layout_height="30dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/baseline_schedule_24"
-            android:background="@drawable/circle_image_notification"/>
+
         <TextView
             android:id="@+id/textNotif"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/gambarNotif"
+            app:layout_constraintStart_toStartOf="parent"
             android:layout_marginLeft="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"

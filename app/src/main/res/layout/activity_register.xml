@@ -70,7 +70,7 @@
             android:layout_width="match_parent"
             android:layout_height="57dp"
             android:background="@drawable/button_shape"
-            android:hint="Kata Sandi"
+            android:hint="Konfirmasi Kata Sandi"
             android:layout_marginTop="15dp"
             android:inputType="textPassword"
             android:fontFamily="@font/poppins_medium"
