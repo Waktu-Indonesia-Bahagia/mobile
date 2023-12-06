@@ -33,6 +33,18 @@ class ProfileFragment : Fragment(), View.OnClickListener {
 
         val ivLock: ImageView = view.findViewById(R.id.iv_lock)
         ivLock.setOnClickListener(this)
+
+        val tvInfo: TextView = view.findViewById(R.id.tv_info)
+        tvInfo.setOnClickListener(this)
+
+        val ivInfo: ImageView = view.findViewById(R.id.iv_info)
+        ivInfo.setOnClickListener(this)
+
+        val tvSetting: TextView = view.findViewById(R.id.tv_setting)
+        tvSetting.setOnClickListener(this)
+
+        val ivSetting: ImageView = view.findViewById(R.id.iv_setting)
+        ivSetting.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -51,6 +63,26 @@ class ProfileFragment : Fragment(), View.OnClickListener {
             val fragmentManager = parentFragmentManager
             fragmentManager.beginTransaction().apply {
                 replace(R.id.frame_container,ubahSandiFragment, UbahSandiFragment::class.java.simpleName)
+                addToBackStack(null)
+                commit()
+            }
+        }
+
+        if(v?.id == R.id.tv_info || v?.id == R.id.iv_info){
+            val tentangAplikasiFragment= TentangAplikasiFragment()
+            val fragmentManager = parentFragmentManager
+            fragmentManager.beginTransaction().apply {
+                replace(R.id.frame_container,tentangAplikasiFragment, TentangAplikasiFragment::class.java.simpleName)
+                addToBackStack(null)
+                commit()
+            }
+        }
+
+        if(v?.id == R.id.tv_setting || v?.id == R.id.iv_setting){
+            val pengaturanFragment= PengaturanFragment()
+            val fragmentManager = parentFragmentManager
+            fragmentManager.beginTransaction().apply {
+                replace(R.id.frame_container,pengaturanFragment, PengaturanFragment::class.java.simpleName)
                 addToBackStack(null)
                 commit()
             }

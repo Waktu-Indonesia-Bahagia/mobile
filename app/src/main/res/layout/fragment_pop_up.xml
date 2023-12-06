@@ -10,6 +10,8 @@
         android:background="@color/white"
         app:cardCornerRadius="35dp"
         app:cardElevation="2dp"
+        android:outlineSpotShadowColor="@color/green"
+        android:outlineAmbientShadowColor="@color/green"
         android:layout_marginTop="230dp"
         app:cardUseCompatPadding="true">
 
@@ -21,9 +23,9 @@
             android:padding="20dp">
 
             <com.airbnb.lottie.LottieAnimationView
-                android:layout_width="180dp"
-                android:layout_height="180dp"
-                app:lottie_rawRes="@raw/email"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                app:lottie_rawRes="@raw/done"
                 app:lottie_autoPlay="true"
                 app:lottie_speed="1.25" />
 
@@ -38,7 +40,7 @@
             <Button
                 android:id="@+id/btn_profil"
                 android:layout_marginTop="15dp"
-                android:layout_width="220dp"
+                android:layout_width="150dp"
                 android:layout_height="43dp"
                 android:textSize="17dp"
                 android:fontFamily="@font/poppins_medium"

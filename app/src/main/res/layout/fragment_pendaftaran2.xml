@@ -10,6 +10,8 @@
         android:background="@color/white"
         app:cardCornerRadius="35dp"
         app:cardElevation="2dp"
+        android:outlineSpotShadowColor="@color/green"
+        android:outlineAmbientShadowColor="@color/green"
         android:layout_marginTop="200dp"
         app:cardUseCompatPadding="true">
 
