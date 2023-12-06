@@ -1,6 +1,7 @@
 package com.example.kerjaparaktik.pendaftaran
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,33 +10,46 @@ import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.kerjaparaktik.R
-import com.google.android.gms.cast.framework.media.ImagePicker
+import com.github.dhaval2404.imagepicker.ImagePicker
 
 class PendaftaranFragment : Fragment() {
-    private lateinit var imageView: ImageView
-    private lateinit var button: Button
+    private lateinit var imageViewKtp: ImageView
+    private lateinit var imageViewKtm: ImageView
+    private lateinit var imageViewPermohonan: ImageView
+    private lateinit var buttonKtp: Button
+    private lateinit var buttonKtm: Button
+    private lateinit var buttonPermohonan: Button
+
+    private val IMAGE_PICKER_REQUEST_CODE_KTP = 1
+    private val IMAGE_PICKER_REQUEST_CODE_KTM = 2
+    private val IMAGE_PICKER_REQUEST_CODE_PERMOHONAN = 3
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_pendaftaran, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        imageView = view.findViewById(R.id.gambarKtp)
-        button = view.findViewById(R.id.btnktp)
+        imageViewKtp = view.findViewById(R.id.gambarKtp)
+        imageViewKtm = view.findViewById(R.id.gambarKtm)
+        imageViewPermohonan = view.findViewById(R.id.gambarPermohonan)
 
-        button.setOnClickListener {
-            com.github.dhaval2404.imagepicker.ImagePicker.with(this)
-                .crop()
-                .compress(1024)
-                .maxResultSize(1080, 1080)
-                .start()
+        buttonKtp = view.findViewById(R.id.btnktp)
+        buttonKtm = view.findViewById(R.id.btnktm)
+        buttonPermohonan = view.findViewById(R.id.btnpermohonan)
 
+        buttonKtp.setOnClickListener {
+            startImagePicker(IMAGE_PICKER_REQUEST_CODE_KTP)
+        }
+        buttonKtm.setOnClickListener {
+            startImagePicker(IMAGE_PICKER_REQUEST_CODE_KTM)
+        }
+        buttonPermohonan.setOnClickListener {
+            startImagePicker(IMAGE_PICKER_REQUEST_CODE_PERMOHONAN)
         }
 
         val autoMagang: AutoCompleteTextView = view.findViewById(R.id.magang)
@@ -43,7 +57,11 @@ class PendaftaranFragment : Fragment() {
         val btnSubmit: Button = view.findViewById(R.id.btnsubmit)
 
         val maganglist = listOf("PKL", "Kerja Praktik")
+<<<<<<< HEAD
         val posisilist = listOf("Cyber Security", "Mobile Development", "Web Development", "Marketing Comunications")
+=======
+        val posisilist = listOf("Cyber Security", "Mobile Developer", "Web Developer","Game Developer","Event & Community", "Marketing Communication")
+>>>>>>> bfe33126309511ab8d40c53694decd63075b91ff
 
         val adapter1 = ArrayAdapter(requireContext(), R.layout.magang, maganglist)
         val adapter2 = ArrayAdapter(requireContext(), R.layout.magang, posisilist)
@@ -63,7 +81,7 @@ class PendaftaranFragment : Fragment() {
 
         // Adapter Button
         btnSubmit.setOnClickListener {
-            val targetpendaftaran = pendaftaran2()
+            val targetpendaftaran = pendaftaran2() // Assume there is a Pendaftaran2Fragment class
             val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
 
             // Ganti fragment saat ini dengan fragment tujuan
@@ -77,8 +95,29 @@ class PendaftaranFragment : Fragment() {
         }
     }
 
+    private fun startImagePicker(requestCode: Int) {
+        ImagePicker.with(this)
+            .crop()
+            .compress(1024)
+            .maxResultSize(1080, 1080)
+            .start(requestCode)
+    }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        imageView.setImageURI(data?.data)
+        val selectedImageUri: Uri? = data?.data
+
+        when (requestCode) {
+            IMAGE_PICKER_REQUEST_CODE_KTP -> {
+                imageViewKtp.setImageURI(selectedImageUri)
+            }
+            IMAGE_PICKER_REQUEST_CODE_KTM -> {
+                imageViewKtm.setImageURI(selectedImageUri)
+            }
+            IMAGE_PICKER_REQUEST_CODE_PERMOHONAN -> {
+                imageViewPermohonan.setImageURI(selectedImageUri)
+            }
+            // handle other cases if needed
+        }
     }
 }

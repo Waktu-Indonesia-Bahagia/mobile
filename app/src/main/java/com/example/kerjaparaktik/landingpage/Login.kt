@@ -46,12 +46,21 @@ class Login : AppCompatActivity() {
 
         btn_login.setOnClickListener {
              val intent = Intent(this@Login, MainActivity::class.java)
+<<<<<<< HEAD
               startActivity(intent) }
 
 //            val usernameInput = username.text.toString()
 //            val passwordInput = password.text.toString()
 
 
+=======
+              startActivity(intent)
+
+//            val usernameInput = username.text.toString()
+//            val passwordInput = password.text.toString()
+//
+//
+>>>>>>> bfe33126309511ab8d40c53694decd63075b91ff
 //            if (!(usernameInput.isEmpty() || passwordInput.isEmpty())) {
 //                val requestQueue: RequestQueue = Volley.newRequestQueue(applicationContext)
 //                val stringRequest = object : StringRequest(
@@ -74,8 +83,13 @@ class Login : AppCompatActivity() {
 //            } else {
 //                Toast.makeText(applicationContext, "Username atau Password salah!", Toast.LENGTH_SHORT).show()
 //            }
+<<<<<<< HEAD
 
 
+=======
+        }
+//
+>>>>>>> bfe33126309511ab8d40c53694decd63075b91ff
         txt_akunbaru.setOnClickListener {
             val intent = Intent(this@Login, Register::class.java)
             startActivity(intent)

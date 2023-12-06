@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
+import androidx.core.text.HtmlCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kerjaparaktik.R
@@ -37,10 +37,10 @@ class NotificationFragment : Fragment() {
     }
 
     private fun addDataToList() {
-        mList.add(NotificationData("Selamat datang di Aplikasi Kami, Aplikasi Kami ini bertujuan bagi Mahasiswa yang ingin kerja praktik.", R.drawable.baseline_apps_24))
-        mList.add(NotificationData("Pendaftaran Anda sedang diproses oleh Pihak Instansi.", R.drawable.baseline_schedule_24))
-        mList.add(NotificationData("Profile Anda berhasil diubah.", R.drawable.baseline_person_24))
-        mList.add(NotificationData("Selamat Anda berhasil diterima oleh Pihak Instansi.", R.drawable.baseline_library_add_check_24))
+        mList.add(NotificationData(HtmlCompat.fromHtml("<b>Selamat datang</b> di Aplikasi Kami, Aplikasi Kami ini bertujuan bagi Mahasiswa yang ingin kerja praktik.", HtmlCompat.FROM_HTML_MODE_LEGACY), R.drawable.baseline_apps_24))
+        mList.add(NotificationData(HtmlCompat.fromHtml("<b>Pendaftaran</b> Anda sedang diproses oleh Pihak Instansi.", HtmlCompat.FROM_HTML_MODE_LEGACY),R.drawable.baseline_schedule_24))
+        mList.add(NotificationData(HtmlCompat.fromHtml("<b>Profile</b> Anda berhasil diubah.", HtmlCompat.FROM_HTML_MODE_LEGACY),R.drawable.baseline_person_24))
+        mList.add(NotificationData(HtmlCompat.fromHtml("<b>Selamat</b> Anda berhasil diterima oleh Pihak Instansi.",HtmlCompat.FROM_HTML_MODE_LEGACY), R.drawable.baseline_library_add_check_24))
     }
 
 //    override fun onClick(v: View?) {
