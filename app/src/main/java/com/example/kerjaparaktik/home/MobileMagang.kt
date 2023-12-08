@@ -6,12 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.TextView
 import com.example.kerjaparaktik.R
 import com.example.kerjaparaktik.pendaftaran.PendaftaranFragment
 
 
-class JobDetails : Fragment(), View.OnClickListener {
+class MobileMagang : Fragment(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,7 +22,7 @@ class JobDetails : Fragment(), View.OnClickListener {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_job_details, container, false)
+        return inflater.inflate(R.layout.fragment_mobile_magang, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

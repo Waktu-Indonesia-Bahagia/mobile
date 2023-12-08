@@ -14,11 +14,10 @@ import com.android.volley.RequestQueue
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-<<<<<<< HEAD
-=======
+
 import com.example.kerjaparaktik.DbContract
 import com.example.kerjaparaktik.MainActivity
->>>>>>> bfe33126309511ab8d40c53694decd63075b91ff
+
 //import com.example.kerjaparaktik.DbContract
 import com.example.kerjaparaktik.R
 
@@ -36,13 +35,13 @@ class Register : AppCompatActivity() {
         val password: EditText = findViewById(R.id.text_katasandi)
         val email: EditText = findViewById(R.id.edt_email)
 
-<<<<<<< HEAD
+
 //        btnDaftar.setOnClickListener(View.OnClickListener {
-=======
+
         btnDaftar.setOnClickListener(View.OnClickListener {
              val intent = Intent(this@Register, Login::class.java)
               startActivity(intent)
->>>>>>> bfe33126309511ab8d40c53694decd63075b91ff
+
 //            val usernameInput = username.text.toString()
 //            val passwordInput = password.text.toString()
 //            val emailInput = email.text.toString()
@@ -77,13 +76,13 @@ class Register : AppCompatActivity() {
 //            } else {
 //                Toast.makeText(applicationContext, "Ada data yang masih belum terisi", Toast.LENGTH_SHORT).show()
 //            }
-<<<<<<< HEAD
+
 //        })
 
-=======
+
             })
 //
->>>>>>> bfe33126309511ab8d40c53694decd63075b91ff
+
         txtPunyaAkun.setOnClickListener {
             val intent = Intent(this@Register, Login::class.java)
             startActivity(intent)

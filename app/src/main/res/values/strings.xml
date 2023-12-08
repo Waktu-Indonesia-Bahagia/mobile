@@ -22,6 +22,57 @@
     <string name="jekel">Jenis Kelamin \nPria</string>
     <string name="alamat">Alamat \nJL. Letnan Muhtar Saleh</string>
     <string name="tentang">Aplikasi mobile yang berfungsi sebagai \nplatfrom yang memudahkan mahasiswa \nuntuk menerima informasi, mendaftar, \ndan memantau proses perkembangan \npendaftaran kerja praktik di sebuah \ninstansi/perusahaan.</string>
+    <!--Text Bullet MAGANG-->
+    <string name="text_with_bullet">
+        \u2022 Pemograman Android
+        \n \u2022 Design Thinking
+        \n \u2022 Project Management
+        \n \u2022 Pemograman Kotlin
+        \n \u2022 CCA: Comunication, Collaboration, dan Adaptive
+    </string>
+    <string name="bullet_Kriteria_peserta_mobile">
+        \u2022 Mahasiswa S1 semester >4 dan D3/D4 semester >2 jurusan teknologi informasi, sistem informasi, atau sejenis.
+        \n \u2022 Memahami dasar Android Studio dan Kotlin.
+        \n \u2022 Memiliki Laptop.
+        \n \u2022 Bersedia untuk datang  ke Nongsa Digital Park Batam, selama 1 semester.
+        \n \u2022 Mempunyai komitmen tinggi dalam belajar.
+    </string>
+    <string name="kopetensi_game">
+        \u2022 Game Programing.
+        \n \u2022 Game Design.
+        \n \u2022 CCA: Comunication, Collaboration, dan Adaptive.
+        \n \u2022 Game Animation.
+        \n \u2022 Project Management.
+    </string>
+    <string name="deskripsi_magang">Magang Mahasiswa ini akan didampingi oleh mentor praktisi professional dan akan terfokus pada pengalaman melakukan penelitian, pengembangan sampai dengan penelitian untuk sebuah masalah atau tantangan yang dimiliki oleh perusahaan.</string>
+    <string name="kriteria_game">
+         \u2022 Mahasiswa S1 semester >4 dan D3/D4 semester >2 jurusan teknologi informasi, sistem informasi, atau sejenis.
+        \n \u2022 Memahami dasar Unity.
+        \n \u2022 Memiliki Laptop.
+        \n \u2022 Bersedia untuk datang  ke Nongsa Digital Park Batam, selama 1 semester.
+        \n \u2022 Mempunyai komitmen tinggi dalam belajar.
+    </string>
+    <string name="kopetensi_EVC_magang">
+        \u2022 Event Management.
+        \n \u2022 CCA: Comunication, Collaboration, dan Adaptive.
+        \n \u2022 Comunnity Relations.
+        \n \u2022 Design thinking.
+        \n \u2022 Project Management.
+    </string>
+    <string name="kriteria_EVC">
+           \u2022 Mahasiswa S1 semester >4 dan D3/D4 semester >2 jurusan teknologi informasi, sistem informasi, atau sejenis
+        terkhusus ilmu komunikasi, manajemen, marketing, public relations, hubungan internasional atau sejenisnya.
+        \n \u2022 Memiliki Laptop.
+        \n \u2022 Bersedia untuk datang  ke Nongsa Digital Park Batam, selama 1 semester.
+        \n \u2022 Mempunyai komitmen tinggi dalam belajar.
+    </string>
+    <string name="kopetensi_MC">
+        \u2022 Digital Promotions.
+        \n \u2022 Digital Marketing.
+        \n \u2022 Project Management.
+        \n \u2022 Design Thinking.
+        \n \u2022 CCA: Comunication, Collaboration, dan Adaptive.
+    </string>
     <!-- Profile -->
 
     <!--   Profile <string name="list">-->

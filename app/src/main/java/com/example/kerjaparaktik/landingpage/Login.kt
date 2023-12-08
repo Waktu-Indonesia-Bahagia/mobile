@@ -19,6 +19,7 @@ import com.android.volley.Response
 import com.android.volley.VolleyError
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+/*import com.example.kerjaparaktik.DbContract*/
 //import com.example.kerjaparaktik.DbContract
 import com.example.kerjaparaktik.MainActivity
 import com.example.kerjaparaktik.R
@@ -40,27 +41,18 @@ class Login : AppCompatActivity() {
         val password: EditText = findViewById(R.id.text_katasandi)
         btnSignIn = findViewById(R.id.btn_signin)
 
-        btnSignIn.setOnClickListener {
+       /* btnSignIn.setOnClickListener {
             displayPopupDialog()
-        }
+        }*/
 
         btn_login.setOnClickListener {
-             val intent = Intent(this@Login, MainActivity::class.java)
-<<<<<<< HEAD
-              startActivity(intent) }
-
-//            val usernameInput = username.text.toString()
-//            val passwordInput = password.text.toString()
-
-
-=======
-              startActivity(intent)
+            val intent = Intent(this@Login, MainActivity::class.java)
+            startActivity(intent)
 
 //            val usernameInput = username.text.toString()
 //            val passwordInput = password.text.toString()
 //
 //
->>>>>>> bfe33126309511ab8d40c53694decd63075b91ff
 //            if (!(usernameInput.isEmpty() || passwordInput.isEmpty())) {
 //                val requestQueue: RequestQueue = Volley.newRequestQueue(applicationContext)
 //                val stringRequest = object : StringRequest(
@@ -83,14 +75,11 @@ class Login : AppCompatActivity() {
 //            } else {
 //                Toast.makeText(applicationContext, "Username atau Password salah!", Toast.LENGTH_SHORT).show()
 //            }
-<<<<<<< HEAD
-
-
-=======
         }
+    }
+    }
 //
->>>>>>> bfe33126309511ab8d40c53694decd63075b91ff
-        txt_akunbaru.setOnClickListener {
+      /*  txt_akunbaru.setOnClickListener {
             val intent = Intent(this@Login, Register::class.java)
             startActivity(intent)
         }
@@ -100,8 +89,8 @@ class Login : AppCompatActivity() {
             startActivity(intent)
         }
     }
-
-    private fun displayPopupDialog() {
+*/
+   /* private fun displayPopupDialog() {
         val dialog = Dialog(this)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.setContentView(R.layout.popup_signingoogle)
@@ -119,4 +108,4 @@ class Login : AppCompatActivity() {
             startActivity(intent)
         }
     }
-}
+}*/

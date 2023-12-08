@@ -5,11 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.kerjaparaktik.R
-import com.example.kerjaparaktik.pendaftaran.PendaftaranFragment
 
 class HomeFragment : Fragment(), View.OnClickListener {
     override fun onCreateView(
@@ -42,10 +40,10 @@ class HomeFragment : Fragment(), View.OnClickListener {
         }
 
         if(v?.id == R.id.magang){
-            val jobDetails= JobDetails()
+            val jobDetails= MobileMagang()
             val fragmentManager = parentFragmentManager
             fragmentManager.beginTransaction().apply {
-                replace(R.id.frame_container,jobDetails, JobDetails::class.java.simpleName)
+                replace(R.id.frame_container,jobDetails, MobileMagang::class.java.simpleName)
                 addToBackStack(null)
                 commit()
             }
