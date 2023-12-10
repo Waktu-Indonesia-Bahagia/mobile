@@ -27,6 +27,21 @@ class ListMagang : Fragment(), View.OnClickListener {
 
         val ivBack: ImageView = view.findViewById(R.id.iv_back)
         ivBack.setOnClickListener(this)
+
+        val pmagang :ImageView = view.findViewById(R.id.pmagang)
+        pmagang.setOnClickListener(this)
+
+        val pmagang2 :ImageView = view.findViewById(R.id.pmagang2)
+        pmagang2.setOnClickListener(this)
+
+        val pmagang3 :ImageView = view.findViewById(R.id.pmagang3)
+        pmagang3.setOnClickListener(this)
+
+        val pmagan4 :ImageView = view.findViewById(R.id.pmagang4)
+        pmagan4.setOnClickListener(this)
+
+        val pmagang5 : ImageView = view.findViewById(R.id.pmagang5)
+        pmagang5.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -48,8 +63,50 @@ class ListMagang : Fragment(), View.OnClickListener {
                 commit()
             }
         }
-
+        if(v?.id == R.id.pmagang){
+            val jobdetails = MobileMagang()
+            val fragmentManager = parentFragmentManager
+            fragmentManager.beginTransaction().apply {
+                replace(R.id.frame_container,jobdetails, HomeFragment::class.java.simpleName)
+                addToBackStack(null)
+                commit()
+            }
+        }
+        if(v?.id == R.id.pmagang2){
+            val jobdetails2 = GameMagang()
+            val fragmentManager = parentFragmentManager
+            fragmentManager.beginTransaction().apply {
+                replace(R.id.frame_container,jobdetails2, GameMagang::class.java.simpleName)
+                addToBackStack(null)
+                commit()
+            }
+        }
+        if(v?.id == R.id.pmagang3){
+            val jobdetails3 = EventComunitiyMagang()
+            val fragmentManager = parentFragmentManager
+            fragmentManager.beginTransaction().apply {
+                replace(R.id.frame_container,jobdetails3, EventComunitiyMagang::class.java.simpleName)
+                addToBackStack(null)
+                commit()
+            }
+        }
+        if(v?.id == R.id.pmagang4){
+            val jobdetails4 = MarketingCommunications()
+            val fragmentManager = parentFragmentManager
+            fragmentManager.beginTransaction().apply {
+                replace(R.id.frame_container, jobdetails4, MarketingCommunications::class.java.simpleName)
+                addToBackStack(null)
+                commit()
+            }
+        }
+        if(v?.id == R.id.pmagang5){
+            val jobdetails5 = MobileMagang()
+            val fragmentManager = parentFragmentManager
+            fragmentManager.beginTransaction().apply {
+                replace(R.id.frame_container, jobdetails5, MobileMagang::class.java.simpleName)
+                addToBackStack(null)
+                commit()
+            }
+        }
     }
-
-
 }
