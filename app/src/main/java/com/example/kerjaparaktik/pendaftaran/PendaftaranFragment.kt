@@ -57,9 +57,7 @@ class PendaftaranFragment : Fragment() {
         val btnSubmit: Button = view.findViewById(R.id.btnsubmit)
 
         val maganglist = listOf("PKL", "Kerja Praktik")
-
-        val posisilist = listOf("Cyber Security", "Mobile Development", "Web Development", "Marketing Comunications")
-
+        val posisilist = listOf("Cyber Security", "Mobile Developer", "Web Developer","Game Developer","Event & Community", "Marketing Communication")
 
 
         val adapter1 = ArrayAdapter(requireContext(), R.layout.magang, maganglist)

@@ -9,8 +9,7 @@ import android.widget.Button
 import com.example.kerjaparaktik.R
 import com.example.kerjaparaktik.pendaftaran.PendaftaranFragment
 
-
-class GameMagang : Fragment() {
+class GameMagang : Fragment(), View.OnClickListener {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,16 +25,16 @@ class GameMagang : Fragment() {
         val btndaftar: Button = view.findViewById(R.id.daftar_game)
         btndaftar.setOnClickListener(this)
     }
+
     override fun onClick(v: View?) {
-        if(v?.id == R.id.daftar_game){
-            val daftar_game= PendaftaranFragment()
+        if (v?.id == R.id.daftar_game) {
+            val daftarGame = PendaftaranFragment()
             val fragmentManager = parentFragmentManager
             fragmentManager.beginTransaction().apply {
-                replace(R.id.frame_container,daftar_game, PendaftaranFragment::class.java.simpleName)
+                replace(R.id.frame_container, daftarGame, PendaftaranFragment::class.java.simpleName)
                 addToBackStack(null)
                 commit()
             }
         }
-
     }
 }

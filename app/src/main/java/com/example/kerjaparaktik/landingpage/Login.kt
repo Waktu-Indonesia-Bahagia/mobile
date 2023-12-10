@@ -5,7 +5,6 @@ import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.view.View
 import android.view.Window
 import android.widget.Button
 import android.widget.EditText
@@ -16,14 +15,11 @@ import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.Response
-import com.android.volley.VolleyError
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-/*import com.example.kerjaparaktik.DbContract*/
-//import com.example.kerjaparaktik.DbContract
+import com.example.kerjaparaktik.DbContract
 import com.example.kerjaparaktik.MainActivity
 import com.example.kerjaparaktik.R
-import com.example.kerjaparaktik.home.HomeFragment
 
 class Login : AppCompatActivity() {
     private lateinit var btnSignIn: ImageButton
@@ -36,50 +32,50 @@ class Login : AppCompatActivity() {
         val txt_akunbaru: TextView = findViewById(R.id.txt_akunbaru)
         val txt_lupakatasandi: TextView = findViewById(R.id.txt_lupakatasandi)
         val btn_login: Button = findViewById(R.id.btn_login)
-
-        val username: EditText = findViewById(R.id.edt_username)
+        val name: EditText = findViewById(R.id.edt_username)
         val password: EditText = findViewById(R.id.text_katasandi)
         btnSignIn = findViewById(R.id.btn_signin)
 
-       /* btnSignIn.setOnClickListener {
+        btnSignIn.setOnClickListener {
             displayPopupDialog()
-        }*/
+        }
 
         btn_login.setOnClickListener {
-            val intent = Intent(this@Login, MainActivity::class.java)
-            startActivity(intent)
+            val nameInput = name.text.toString()
+            val passwordInput = password.text.toString()
 
-//            val usernameInput = username.text.toString()
-//            val passwordInput = password.text.toString()
-//
-//
-//            if (!(usernameInput.isEmpty() || passwordInput.isEmpty())) {
-//                val requestQueue: RequestQueue = Volley.newRequestQueue(applicationContext)
-//                val stringRequest = object : StringRequest(
-//                    Request.Method.GET,
-//                    "${DbContract.urlLogin}?username=$usernameInput&password=$passwordInput",
-//                    Response.Listener<String> { response ->
-//                        if (response == "Anda berhasil Login!") {
-//                            Toast.makeText(applicationContext, "Login Berhasil!", Toast.LENGTH_SHORT).show()
-//                            startActivity(Intent(applicationContext, MainActivity::class.java))
-//                        } else {
-//                            Toast.makeText(applicationContext, "Login Gagal!", Toast.LENGTH_SHORT).show()
-//                        }
-//                    },
-//                    Response.ErrorListener { error ->
-//                        Toast.makeText(applicationContext, error.toString(), Toast.LENGTH_SHORT).show()
-//                    }
-//                ) {}
-//
-//                requestQueue.add(stringRequest)
-//            } else {
-//                Toast.makeText(applicationContext, "Username atau Password salah!", Toast.LENGTH_SHORT).show()
-//            }
+            if (nameInput.isNotEmpty() && passwordInput.isNotEmpty()) {
+                val requestQueue: RequestQueue = Volley.newRequestQueue(applicationContext)
+                val stringRequest = object : StringRequest(
+                    Request.Method.POST, // Ganti metode menjadi POST
+                    DbContract.urlLogin,
+                    Response.Listener { response ->
+                        if (response == "Selamat Datang") {
+                            Toast.makeText(applicationContext, "Login Berhasil!", Toast.LENGTH_SHORT).show()
+                            startActivity(Intent(applicationContext, MainActivity::class.java))
+                        } else {
+                            Toast.makeText(applicationContext, "Login Gagal!", Toast.LENGTH_SHORT).show()
+                        }
+                    },
+                    Response.ErrorListener { error ->
+                        Toast.makeText(applicationContext, error.toString(), Toast.LENGTH_SHORT).show()
+                    }
+                ) {
+                    override fun getParams(): Map<String, String> {
+                        val params = HashMap<String, String>()
+                        params["name"] = nameInput
+                        params["password"] = passwordInput
+                        return params
+                    }
+                }
+
+                requestQueue.add(stringRequest)
+            } else {
+                Toast.makeText(applicationContext, "Username atau Password salah!", Toast.LENGTH_SHORT).show()
+            }
         }
-    }
-    }
-//
-      /*  txt_akunbaru.setOnClickListener {
+
+        txt_akunbaru.setOnClickListener {
             val intent = Intent(this@Login, Register::class.java)
             startActivity(intent)
         }
@@ -89,8 +85,8 @@ class Login : AppCompatActivity() {
             startActivity(intent)
         }
     }
-*/
-   /* private fun displayPopupDialog() {
+
+    private fun displayPopupDialog() {
         val dialog = Dialog(this)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.setContentView(R.layout.popup_signingoogle)
@@ -108,4 +104,4 @@ class Login : AppCompatActivity() {
             startActivity(intent)
         }
     }
-}*/
+}
