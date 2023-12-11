@@ -5,9 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.kerjaparaktik.R
+import com.example.kerjaparaktik.landingpage.Logout
 import org.w3c.dom.Text
 
 class ProfileFragment : Fragment(), View.OnClickListener {
@@ -45,6 +47,9 @@ class ProfileFragment : Fragment(), View.OnClickListener {
 
         val ivSetting: ImageView = view.findViewById(R.id.iv_setting)
         ivSetting.setOnClickListener(this)
+
+        val keluar: Button = view.findViewById(R.id.keluar)
+        keluar.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -87,6 +92,14 @@ class ProfileFragment : Fragment(), View.OnClickListener {
                 commit()
             }
         }
-
+        if(v?.id == R.id.keluar){
+            val keluar = Logout()
+            val fragmentManager = parentFragmentManager
+            fragmentManager.beginTransaction().apply {
+                replace(R.id.frame_container, keluar, Logout::class.java.simpleName)
+                addToBackStack(null)
+                commit()
+            }
+        }
     }
 }

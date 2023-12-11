@@ -26,6 +26,15 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
         val ivMagang: ImageView = view.findViewById(R.id.magang)
         ivMagang.setOnClickListener(this)
+
+        val ivmagang2: ImageView = view.findViewById(R.id.magang2)
+        ivmagang2.setOnClickListener(this)
+
+        val ivmagang3: ImageView = view.findViewById(R.id.magang3)
+        ivmagang3.setOnClickListener(this)
+
+        val ivmagang4: ImageView = view.findViewById(R.id.magang4)
+        ivmagang4.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -38,12 +47,38 @@ class HomeFragment : Fragment(), View.OnClickListener {
                 commit()
             }
         }
-
         if(v?.id == R.id.magang){
             val jobDetails= MobileMagang()
             val fragmentManager = parentFragmentManager
             fragmentManager.beginTransaction().apply {
                 replace(R.id.frame_container,jobDetails, MobileMagang::class.java.simpleName)
+                addToBackStack(null)
+                commit()
+            }
+        }
+        if(v?.id == R.id.magang2){
+            val jobdetails = GameMagang()
+            val fragmentManager = parentFragmentManager
+            fragmentManager.beginTransaction().apply {
+                replace(R.id.frame_container, jobdetails, GameMagang::class.java.simpleName)
+                addToBackStack(null)
+                commit()
+            }
+        }
+        if(v?.id == R.id.magang3){
+            val jobdetails1 = EventComunitiyMagang()
+            val fragmentManager = parentFragmentManager
+            fragmentManager.beginTransaction().apply {
+                replace(R.id.frame_container, jobdetails1, EventComunitiyMagang::class.java.simpleName)
+                addToBackStack(null)
+                commit()
+            }
+        }
+        if(v?.id == R.id.magang4){
+            val jobdetails2 = MarketingCommunications()
+            val fragmentManager = parentFragmentManager
+            fragmentManager.beginTransaction().apply {
+                replace(R.id.frame_container, jobdetails2, MarketingCommunications::class.java.simpleName)
                 addToBackStack(null)
                 commit()
             }
