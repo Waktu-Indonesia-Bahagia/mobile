@@ -1,33 +1,25 @@
 package com.example.kerjaparaktik.home
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.webkit.WebSettings
-import android.webkit.WebView
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
 import com.example.kerjaparaktik.R
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class HomeFragment : Fragment(), View.OnClickListener {
-
-    private lateinit var floatingButton: FloatingActionButton
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_home, container, false)
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_home, container, false)
+    }
 
-        floatingButton = view.findViewById(R.id.fabChatbot)
-        floatingButton.setOnClickListener {
-            navigateToFragment(ChatbotFragment())
-            floatingButton.visibility = View.GONE
-        }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         val btnList: TextView = view.findViewById(R.id.tv_lihatSemua)
         btnList.setOnClickListener(this)
@@ -35,24 +27,61 @@ class HomeFragment : Fragment(), View.OnClickListener {
         val ivMagang: ImageView = view.findViewById(R.id.magang)
         ivMagang.setOnClickListener(this)
 
-        return view
-    }
+        val ivmagang2: ImageView = view.findViewById(R.id.magang2)
+        ivmagang2.setOnClickListener(this)
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        val ivmagang3: ImageView = view.findViewById(R.id.magang3)
+        ivmagang3.setOnClickListener(this)
+
+        val ivmagang4: ImageView = view.findViewById(R.id.magang4)
+        ivmagang4.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
-        when (v?.id) {
-            R.id.tv_lihatSemua -> navigateToFragment(ListMagang())
-            R.id.magang -> navigateToFragment(MobileMagang())
+        if(v?.id == R.id.tv_lihatSemua){
+            val listMagang= ListMagang()
+            val fragmentManager = parentFragmentManager
+            fragmentManager.beginTransaction().apply {
+                replace(R.id.frame_container,listMagang, ListMagang::class.java.simpleName)
+                addToBackStack(null)
+                commit()
+            }
         }
-    }
-
-    private fun navigateToFragment(fragment: Fragment) {
-        val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
-        transaction.replace(R.id.frame_container, fragment, fragment::class.java.simpleName)
-        transaction.addToBackStack(null)
-        transaction.commit()
+        if(v?.id == R.id.magang){
+            val jobDetails= MobileMagang()
+            val fragmentManager = parentFragmentManager
+            fragmentManager.beginTransaction().apply {
+                replace(R.id.frame_container,jobDetails, MobileMagang::class.java.simpleName)
+                addToBackStack(null)
+                commit()
+            }
+        }
+        if(v?.id == R.id.magang2){
+            val jobdetails = GameMagang()
+            val fragmentManager = parentFragmentManager
+            fragmentManager.beginTransaction().apply {
+                replace(R.id.frame_container, jobdetails, GameMagang::class.java.simpleName)
+                addToBackStack(null)
+                commit()
+            }
+        }
+        if(v?.id == R.id.magang3){
+            val jobdetails1 = EventComunitiyMagang()
+            val fragmentManager = parentFragmentManager
+            fragmentManager.beginTransaction().apply {
+                replace(R.id.frame_container, jobdetails1, EventComunitiyMagang::class.java.simpleName)
+                addToBackStack(null)
+                commit()
+            }
+        }
+        if(v?.id == R.id.magang4){
+            val jobdetails2 = MarketingCommunications()
+            val fragmentManager = parentFragmentManager
+            fragmentManager.beginTransaction().apply {
+                replace(R.id.frame_container, jobdetails2, MarketingCommunications::class.java.simpleName)
+                addToBackStack(null)
+                commit()
+            }
+        }
     }
 }
