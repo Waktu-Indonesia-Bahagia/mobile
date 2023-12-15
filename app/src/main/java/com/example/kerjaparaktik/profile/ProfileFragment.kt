@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.kerjaparaktik.R
-import org.w3c.dom.Text
 
 class ProfileFragment : Fragment(), View.OnClickListener {
     override fun onCreateView(

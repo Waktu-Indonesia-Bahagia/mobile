@@ -12,17 +12,19 @@ import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.android.volley.Request
-import com.android.volley.RequestQueue
-import com.android.volley.Response
-import com.android.volley.toolbox.StringRequest
-import com.android.volley.toolbox.Volley
-import com.example.kerjaparaktik.DbContract
+import com.example.kerjaparaktik.ApiInterface
+import com.example.kerjaparaktik.ApiResponse
 import com.example.kerjaparaktik.MainActivity
 import com.example.kerjaparaktik.R
+import com.example.kerjaparaktik.RetrofitClient
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class Login : AppCompatActivity() {
     private lateinit var btnSignIn: ImageButton
+    private val apiInterface: ApiInterface = RetrofitClient.getApiClient().create(ApiInterface::class.java)
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,40 +42,41 @@ class Login : AppCompatActivity() {
             displayPopupDialog()
         }
 
+
+
+
         btn_login.setOnClickListener {
             val nameInput = name.text.toString()
             val passwordInput = password.text.toString()
-
-            if (nameInput.isNotEmpty() && passwordInput.isNotEmpty()) {
-                val requestQueue: RequestQueue = Volley.newRequestQueue(applicationContext)
-                val stringRequest = object : StringRequest(
-                    Request.Method.POST, // Ganti metode menjadi POST
-                    DbContract.urlLogin,
-                    Response.Listener { response ->
-                        if (response == "Selamat Datang") {
-                            Toast.makeText(applicationContext, "Login Berhasil!", Toast.LENGTH_SHORT).show()
-                            startActivity(Intent(applicationContext, MainActivity::class.java))
+            val call: Call<ApiResponse> = apiInterface.performUserLogin(nameInput, passwordInput)
+            call.enqueue(object : Callback<ApiResponse> {
+                override fun onResponse(call: Call<ApiResponse>, response: Response<ApiResponse>) {
+                    if (response.isSuccessful) {
+                        val apiResponse: ApiResponse? = response.body()
+                        if (apiResponse?.getStatus() == "ok") {
+                            if (apiResponse.getResultCode() == 1) {  // Compare as String
+                                Toast.makeText(applicationContext, "Login Succesfully", Toast.LENGTH_SHORT).show()
+                                val intent = Intent(this@Login, MainActivity::class.java)
+                                startActivity(intent);
+                                finish();
+                            } else {
+                                Toast.makeText(applicationContext, "Check your Name/Password...", Toast.LENGTH_SHORT).show()
+                            }
                         } else {
-                            Toast.makeText(applicationContext, "Login Gagal!", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(applicationContext, "Check your Name/Password...", Toast.LENGTH_SHORT).show()
                         }
-                    },
-                    Response.ErrorListener { error ->
-                        Toast.makeText(applicationContext, error.toString(), Toast.LENGTH_SHORT).show()
-                    }
-                ) {
-                    override fun getParams(): Map<String, String> {
-                        val params = HashMap<String, String>()
-                        params["name"] = nameInput
-                        params["password"] = passwordInput
-                        return params
+
                     }
                 }
 
-                requestQueue.add(stringRequest)
-            } else {
-                Toast.makeText(applicationContext, "Username atau Password salah!", Toast.LENGTH_SHORT).show()
-            }
+                override fun onFailure(call: Call<ApiResponse>, t: Throwable) {
+                    // Handle failure here
+                }
+            })
         }
+
+
+
 
         txt_akunbaru.setOnClickListener {
             val intent = Intent(this@Login, Register::class.java)

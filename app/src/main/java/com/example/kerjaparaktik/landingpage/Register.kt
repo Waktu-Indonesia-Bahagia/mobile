@@ -2,23 +2,22 @@ package com.example.kerjaparaktik.landingpage
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.android.volley.AuthFailureError
-import com.android.volley.Request
-import com.android.volley.RequestQueue
-import com.android.volley.Response
-import com.android.volley.toolbox.StringRequest
-import com.android.volley.toolbox.Volley
-import com.example.kerjaparaktik.DbContract
-import com.example.kerjaparaktik.MainActivity
+import com.example.kerjaparaktik.ApiInterface
+import com.example.kerjaparaktik.ApiResponse
 import com.example.kerjaparaktik.R
+import com.example.kerjaparaktik.RetrofitClient
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class Register : AppCompatActivity() {
+
+    private val apiInterface: ApiInterface = RetrofitClient.getApiClient().create(ApiInterface::class.java)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,43 +31,44 @@ class Register : AppCompatActivity() {
         val password: EditText = findViewById(R.id.text_katasandi)
         val email: EditText = findViewById(R.id.edt_email)
 
-        btnDaftar.setOnClickListener(View.OnClickListener {
+        btnDaftar.setOnClickListener {
             val nameInput = name.text.toString()
             val passwordInput = password.text.toString()
             val emailInput = email.text.toString()
 
-            if (!(nameInput.isEmpty() || passwordInput.isEmpty() || emailInput.isEmpty())) {
-                val stringRequest = object : StringRequest(
-                    Request.Method.POST, // Ganti metode menjadi POST
-                    DbContract.urlRegister,
-                    Response.Listener { response ->
-                        Toast.makeText(applicationContext, response, Toast.LENGTH_SHORT).show()
-                        startActivity(Intent(applicationContext, Login::class.java))
-                    },
-                    Response.ErrorListener { error ->
-                        Toast.makeText(applicationContext, error.toString(), Toast.LENGTH_SHORT).show()
-                    }
-                ) {
-                    @Throws(AuthFailureError::class)
-                    override fun getParams(): Map<String, String> {
-                        val params = HashMap<String, String>()
-                        params["name"] = nameInput
-                        params["password"] = passwordInput
-                        params["email"] = emailInput
-                        return params
+            val call: Call<ApiResponse> = apiInterface.performUserSignIn(nameInput, passwordInput, emailInput)
+            call.enqueue(object : Callback<ApiResponse> {
+                override fun onResponse(call: Call<ApiResponse>, response: Response<ApiResponse>) {
+                    if (response.isSuccessful) {
+                        val apiResponse: ApiResponse? = response.body()
+                        if (apiResponse?.getStatus() == "ok") {
+                            if (apiResponse.getResultCode() == 1) {  // Compare as String
+                                Toast.makeText(this@Register, "Registration Success!", Toast.LENGTH_SHORT).show()
+                                onBackPressed()
+                                finish()
+                            } else {
+                                Toast.makeText(applicationContext, "User Already Exist....", Toast.LENGTH_SHORT).show()
+                            }
+                        } else {
+                            Toast.makeText(applicationContext, "User Already Exist....", Toast.LENGTH_SHORT).show()
+                        }
+
                     }
                 }
 
-                val requestQueue: RequestQueue = Volley.newRequestQueue(applicationContext)
-                requestQueue.add(stringRequest)
-            } else {
-                Toast.makeText(applicationContext, "Ada data yang masih belum terisi", Toast.LENGTH_SHORT).show()
-            }
-        })
+                override fun onFailure(call: Call<ApiResponse>, t: Throwable) {
+                    // Handle failure here
+                }
+            })
+        }
 
         txtPunyaAkun.setOnClickListener {
             val intent = Intent(this@Register, Login::class.java)
             startActivity(intent)
         }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
     }
 }
