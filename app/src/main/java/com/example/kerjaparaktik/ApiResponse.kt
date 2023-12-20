@@ -39,7 +39,7 @@ class ApiResponse(
     fun getName(): String {
         return name
     }
-    fun getnama(): String {
+    fun getNama(): String {
         return nama
     }
     fun getemail(): String{

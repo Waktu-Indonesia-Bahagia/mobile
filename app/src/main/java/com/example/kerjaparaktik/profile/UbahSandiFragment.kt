@@ -9,17 +9,16 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.android.volley.AuthFailureError
-import com.android.volley.Request
-import com.android.volley.RequestQueue
-import com.android.volley.Response
-import com.android.volley.toolbox.StringRequest
-import com.android.volley.toolbox.Volley
+import com.example.kerjaparaktik.ApiInterface
+import com.example.kerjaparaktik.ApiResponse
 import com.example.kerjaparaktik.R
-import java.util.HashMap
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class UbahSandiFragment : Fragment(), View.OnClickListener {
-    private var email: String = ""
+    private val apiInterface: ApiInterface = RetrofitClient.getApiClient().create(ApiInterface::class.java)
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -54,35 +53,8 @@ class UbahSandiFragment : Fragment(), View.OnClickListener {
                 val oldPassword = old_password.text.toString().trim()
                 val newPassword = new_password.text.toString().trim()
                 val conformPassword = conform_password.text.toString().trim()
-//                val emailKt =
 
-//                if (oldPassword.isEmpty() || newPassword.isEmpty() || conformPassword.isEmpty()) {
-//                    message("Masih ada yang Kosong!")
-//                } else {
-//                    val stringRequest = object : StringRequest(
-//                        Request.Method.POST,
-//                        DbContract.UrlResetPassword,
-//                        Response.Listener { response ->
-//                            handleResponse(response)
-//                        },
-//                        Response.ErrorListener { error ->
-//                            message(error.message)
-//                        }
-//                    ) {
-//                        @Throws(AuthFailureError::class)
-//                        override fun getParams(): Map<String, String> {
-//                            val params: MutableMap<String, String> = HashMap()
-//                            params["old_password"] = oldPassword
-//                            params["new_password"] = newPassword
-//                            params["conform_password"] = conformPassword
-////                            params["email"] = emailKt
-//                            return params
-//                        }
-//                    }
-//
-//                    val queue: RequestQueue = Volley.newRequestQueue(requireContext())
-//                    queue.add(stringRequest)
-//                }
+                performPasswordChange(oldPassword, newPassword, conformPassword)
             }
 
             R.id.iv_arrow_back_sandi -> {
@@ -101,19 +73,59 @@ class UbahSandiFragment : Fragment(), View.OnClickListener {
         }
     }
 
-    private fun handleResponse(response: String) {
-        if (response.contains("Kata Sandi Lama Tidak Sama")) {
-            message(response)
-        } else {
-            val popUpFragment = PopUpFragment()
-            val fragmentManager = parentFragmentManager
-            fragmentManager.beginTransaction().apply {
-                replace(R.id.frame_container, popUpFragment, PopUpFragment::class.java.simpleName)
-                addToBackStack(null)
-                commit()
+    private fun performPasswordChange(oldPassword: String, newPassword: String, conformPassword: String) {
+        val call: Call<ApiResponse> = apiInterface.performResetPassword(oldPassword, newPassword, conformPassword)
+
+        call.enqueue(object : Callback<ApiResponse> {
+            override fun onResponse(call: Call<ApiResponse>, response: Response<ApiResponse>) {
+                if (response.isSuccessful) {
+                    handleResponse(response.body()?.getStatus())
+                } else {
+                    showCustomToast("Ubah Kata Sandi Gagal!")
+                }
             }
+
+            override fun onFailure(call: Call<ApiResponse>, t: Throwable) {
+                showCustomToast("Network Error: ${t.message}")
+            }
+        })
+    }
+
+
+
+    fun showCustomToast(message: String) {
+        val context = requireContext() // Mendapatkan konteks dari fragment
+        Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+    }
+
+    private fun handleResponse(response: String?) {
+        if (!response.isNullOrEmpty()) {
+            if (response == "Kata Sandi berhasil diubah!") {
+                println("Success")
+                showPopUpFragment()
+
+            } else {
+                message(response)
+            }
+        } else {
+            message("Error: Response body is null or empty")
         }
     }
+
+
+    private fun showPopUpFragment() {
+        val popUpFragment = PopUpFragment()
+        val fragmentManager = parentFragmentManager
+        fragmentManager.beginTransaction().apply {
+            replace(R.id.frame_container, popUpFragment, PopUpFragment::class.java.simpleName)
+            addToBackStack(null)
+            commit()
+        }
+    }
+
+
+
+
 
     private fun message(message: String?) {
         Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
