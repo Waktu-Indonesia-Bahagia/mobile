@@ -42,10 +42,11 @@
             android:fontFamily="@font/poppins_medium"/>
 
         <EditText
+            android:id="@+id/edt_nama"
             android:layout_width="match_parent"
             android:layout_height="64dp"
             android:layout_marginStart="20dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="20dp"
             android:hint="Masukkan Nama"
             android:paddingStart="30dp"
             android:textSize="16sp"
@@ -55,10 +56,11 @@
             />
 
         <EditText
+            android:id="@+id/edt_asal_kampus"
             android:layout_width="match_parent"
             android:layout_height="64dp"
             android:layout_marginStart="20dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="20dp"
             android:hint="Masukkan Asal Sekolah/Kampus"
             android:paddingStart="30dp"
             android:textSize="16sp"
@@ -68,11 +70,12 @@
             />
 
         <EditText
+            android:id="@+id/edt_no_telp"
             android:layout_width="match_parent"
             android:layout_height="64dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="20dp"
             android:background="@drawable/rounded_edittext_bg"
             android:fontFamily="@font/poppins_regular"
             android:hint="Masukkan Nomor Telepon/WA"
@@ -80,10 +83,11 @@
             android:textSize="16sp" />
 
         <EditText
+            android:id="@+id/edt_email"
             android:layout_width="match_parent"
             android:layout_height="64dp"
             android:layout_marginStart="20dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="20dp"
             android:hint="Masukkan Email Aktif"
             android:paddingStart="30dp"
             android:textSize="16sp"
@@ -92,37 +96,11 @@
             android:background="@drawable/rounded_edittext_bg"
             />
 
-<!--        <Spinner-->
-<!--            android:id="@+id/spinnerMagang"-->
-<!--            android:layout_width="320dp"-->
-<!--            android:layout_height="64dp"-->
-<!--            android:prompt="@string/spinner_hint"-->
-<!--            android:fontFamily="@font/poppins_regular"-->
-<!--            android:paddingStart="30dp"-->
-<!--            android:paddingEnd="30dp"-->
-<!--            android:layout_marginStart="20dp"-->
-<!--            android:layout_marginTop="15dp"-->
-<!--            android:spinnerMode="dropdown"-->
-<!--            android:textColor="#000000"-->
-<!--            />-->
-
-<!--        <Spinner-->
-<!--            android:id="@+id/spinnerposisi"-->
-<!--            android:layout_width="320dp"-->
-<!--            android:layout_height="64dp"-->
-<!--            android:prompt="@string/posisi_hint"-->
-<!--            android:fontFamily="@font/poppins_regular"-->
-<!--            android:paddingStart="30dp"-->
-<!--            android:paddingEnd="30dp"-->
-<!--            android:layout_marginStart="20dp"-->
-<!--            android:layout_marginTop="15dp"-->
-<!--            android:spinnerMode="dropdown"-->
-<!--            android:textColor="#000000"-->
-<!--            />-->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             android:layout_marginTop="15dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
             <AutoCompleteTextView
@@ -138,6 +116,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             android:layout_marginTop="15dp"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
             <AutoCompleteTextView
@@ -166,7 +145,7 @@
 
             <Button
                 android:layout_width="131dp"
-                android:layout_height="64dp"
+                android:layout_height="50dp"
                 android:layout_marginStart="20dp"
                 android:fontFamily="@font/poppins_regular"
                 android:text="Pilih File"
@@ -177,7 +156,8 @@
             <ImageView
                 android:id="@+id/gambarKtp"
                 android:layout_width="189dp"
-                android:layout_height="64dp"
+                android:layout_marginStart="20dp"
+                android:layout_height="50dp"
                 android:src="@drawable/baseline_person_24"
                 />
 
@@ -200,7 +180,7 @@
 
             <Button
                 android:layout_width="131dp"
-                android:layout_height="64dp"
+                android:layout_height="50dp"
                 android:layout_marginStart="20dp"
                 android:fontFamily="@font/poppins_regular"
                 android:background="@drawable/rounded_button"
@@ -210,7 +190,8 @@
             <ImageView
                 android:id="@+id/gambarKtm"
                 android:layout_width="189dp"
-                android:layout_height="64dp"
+                android:layout_marginStart="20dp"
+                android:layout_height="50dp"
                 android:src="@drawable/baseline_person_24"
                 />
         </LinearLayout>
@@ -232,7 +213,7 @@
 
             <Button
                 android:layout_width="131dp"
-                android:layout_height="64dp"
+                android:layout_height="50dp"
                 android:layout_marginStart="20dp"
                 android:fontFamily="@font/poppins_regular"
                 android:background="@drawable/rounded_button"
@@ -241,21 +222,25 @@
                 android:id="@+id/btnpermohonan"/>
             <ImageView
                 android:id="@+id/gambarPermohonan"
+                android:layout_marginStart="20dp"
                 android:layout_width="189dp"
-                android:layout_height="64dp"
+                android:layout_height="50dp"
                 android:src="@drawable/baseline_person_24"
                 />
         </LinearLayout>
 
         <Button
             android:layout_width="131dp"
-            android:layout_height="64dp"
-            android:layout_marginStart="20dp"
-            android:fontFamily="@font/poppins_regular"
+            android:layout_height="50dp"
+            android:layout_marginStart="5dp"
+            android:fontFamily="@font/poppins_bold"
             android:text="Submit"
-            android:textSize="14sp"
+            android:layout_gravity="center"
+            android:clickable="true"
+            android:background="@drawable/button_login"
+            android:textSize="15sp"
             android:id="@+id/btnsubmit"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="25dp"
             android:layout_marginBottom="80dp"/>
 
     </LinearLayout>

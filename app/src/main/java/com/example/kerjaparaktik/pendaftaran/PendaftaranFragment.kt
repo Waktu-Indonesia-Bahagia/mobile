@@ -5,12 +5,19 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import androidx.fragment.app.Fragment
 import android.view.ViewGroup
 import android.widget.*
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
+import android.widget.Toast
+import android.widget.Button
+import android.widget.EditText
+import com.example.kerjaparaktik.ApiInterface
+import com.example.kerjaparaktik.ApiResponse
 import com.example.kerjaparaktik.R
 import com.github.dhaval2404.imagepicker.ImagePicker
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class PendaftaranFragment : Fragment() {
     private lateinit var imageViewKtp: ImageView
@@ -19,6 +26,12 @@ class PendaftaranFragment : Fragment() {
     private lateinit var buttonKtp: Button
     private lateinit var buttonKtm: Button
     private lateinit var buttonPermohonan: Button
+    private var selectedImageUriKtp: Uri? = null
+
+
+
+    private val apiInterface: ApiInterface =
+        RetrofitClient.getApiClient().create(ApiInterface::class.java)
 
     private val IMAGE_PICKER_REQUEST_CODE_KTP = 1
     private val IMAGE_PICKER_REQUEST_CODE_KTM = 2
@@ -57,11 +70,30 @@ class PendaftaranFragment : Fragment() {
         val btnSubmit: Button = view.findViewById(R.id.btnsubmit)
 
         val maganglist = listOf("PKL", "Kerja Praktik")
-        val posisilist = listOf("Cyber Security", "Mobile Developer", "Web Developer","Game Developer","Event & Community", "Marketing Communication")
+        val posisilist = listOf(
+            "Cyber Security",
+            "Mobile Developer",
+            "Web Developer",
+            "Game Developer",
+            "Event & Community",
+            "Marketing Communication"
+        )
 
 
         val adapter1 = ArrayAdapter(requireContext(), R.layout.magang, maganglist)
         val adapter2 = ArrayAdapter(requireContext(), R.layout.magang, posisilist)
+
+        // val pendaftaran
+        val nama: EditText = view.findViewById(R.id.edt_nama)
+        val asalKampus: EditText = view.findViewById(R.id.edt_asal_kampus)
+        val noTelp: EditText = view.findViewById(R.id.edt_no_telp)
+        val email: EditText = view.findViewById(R.id.edt_email)
+        val magang: EditText = view.findViewById(R.id.magang)
+        val posisi: EditText = view.findViewById(R.id.posisi)
+        val ktp: ImageView = view.findViewById(R.id.gambarKtp)
+        val ktm: ImageView = view.findViewById(R.id.gambarKtm)
+        val permohonan: ImageView = view.findViewById(R.id.gambarPermohonan)
+
 
         // Adapter Untuk Drop Down Menu
         autoMagang.setAdapter(adapter1)
@@ -78,43 +110,81 @@ class PendaftaranFragment : Fragment() {
 
         // Adapter Button
         btnSubmit.setOnClickListener {
-            val targetpendaftaran = pendaftaran2() // Assume there is a Pendaftaran2Fragment class
-            val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
 
-            // Ganti fragment saat ini dengan fragment tujuan
-            transaction.replace(R.id.frame_container, targetpendaftaran)
+            val pendaftaran2 = Pendaftaran2() // Assume there is a Pendaftaran2Fragment class
+            val fragmentManager = parentFragmentManager
 
-            // Tambahkan ke back stack, sehingga dapat kembali ke fragment sebelumnya
-            transaction.addToBackStack(null)
+            val namaInput = nama.text.toString()
+            val asalkampusInput = asalKampus.text.toString()
+            val noTelpInput = noTelp.text.toString()
+            val emailInput = email.text.toString()
+            val magangInput = magang.text.toString()
+            val posisiInput = posisi.text.toString()
+            val ktpInput = ktp.rootView.toString()
+            val ktmInput = ktm.rootView.toString()
+            val permohonanInput = permohonan.rootView.toString()
 
-            // Lakukan transaksi
-            transaction.commit()
+            val call: Call<ApiResponse> = apiInterface.performPendaftaran(namaInput, asalkampusInput, noTelpInput, emailInput, magangInput, posisiInput, ktpInput, ktmInput, permohonanInput )
+            call.enqueue(object : Callback<ApiResponse> {
+                override fun onResponse(call: Call<ApiResponse>, response: Response<ApiResponse>) {
+                    if (response.isSuccessful) {
+                        val apiResponse: ApiResponse? = response.body()
+                        if (apiResponse?.getStatus() == "ok")  {
+                            if (apiResponse.getResultCode() == 1) {  // Compare as String
+                                fragmentManager.beginTransaction().apply {
+                                    replace(
+                                        R.id.frame_container,
+                                        pendaftaran2,
+                                        Pendaftaran2::class.java.simpleName
+                                    )
+                                    addToBackStack(null)
+                                    commit()
+                                }
+                            } else {
+                                Toast.makeText(context, "Semua data harus terisi...", Toast.LENGTH_SHORT).show()
+                            }
+                        }
+                    }
+                }
+
+                override fun onFailure(call: Call<ApiResponse>, t: Throwable) {
+                    // Handle failure here
+                }
+            })
+
         }
-    }
 
-    private fun startImagePicker(requestCode: Int) {
-        ImagePicker.with(this)
-            .crop()
-            .compress(1024)
-            .maxResultSize(1080, 1080)
-            .start(requestCode)
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        val selectedImageUri: Uri? = data?.data
-
-        when (requestCode) {
-            IMAGE_PICKER_REQUEST_CODE_KTP -> {
-                imageViewKtp.setImageURI(selectedImageUri)
-            }
-            IMAGE_PICKER_REQUEST_CODE_KTM -> {
-                imageViewKtm.setImageURI(selectedImageUri)
-            }
-            IMAGE_PICKER_REQUEST_CODE_PERMOHONAN -> {
-                imageViewPermohonan.setImageURI(selectedImageUri)
-            }
-            // handle other cases if needed
         }
-    }
+
+        private fun startImagePicker(requestCode: Int) {
+            ImagePicker.with(this)
+                .crop()
+                .compress(1024)
+                .maxResultSize(1080, 1080)
+                .start(requestCode)
+        }
+
+        override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+            super.onActivityResult(requestCode, resultCode, data)
+
+
+            when (requestCode) {
+                IMAGE_PICKER_REQUEST_CODE_KTP -> {
+                    val selectedImageUriKtp = data?.data!!
+                    imageViewKtp.setImageURI(selectedImageUriKtp)
+                }
+
+                IMAGE_PICKER_REQUEST_CODE_KTM -> {
+                    val selectedImageUriKtm = data?.data!!
+                    imageViewKtm.setImageURI(selectedImageUriKtm)
+                }
+
+                IMAGE_PICKER_REQUEST_CODE_PERMOHONAN -> {
+                    val selectedImageUriPermohonan = data?.data!!
+                    imageViewPermohonan.setImageURI(selectedImageUriPermohonan)
+                }
+                // handle other cases if needed
+            }
+        }
+
 }

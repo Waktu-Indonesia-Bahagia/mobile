@@ -62,37 +62,37 @@ class HomeFragment : Fragment(), View.OnClickListener {
             }
         }
         if(v?.id == R.id.magang){
-            val jobDetails= MobileMagang()
+            val jobDetails1= MobileMagang()
             val fragmentManager = parentFragmentManager
             fragmentManager.beginTransaction().apply {
-                replace(R.id.frame_container,jobDetails, MobileMagang::class.java.simpleName)
+                replace(R.id.frame_container,jobDetails1, MobileMagang::class.java.simpleName)
                 addToBackStack(null)
                 commit()
             }
         }
         if(v?.id == R.id.magang2){
-            val jobdetails = GameMagang()
+            val jobdetails2 = GameMagang()
             val fragmentManager = parentFragmentManager
             fragmentManager.beginTransaction().apply {
-                replace(R.id.frame_container, jobdetails, GameMagang::class.java.simpleName)
+                replace(R.id.frame_container, jobdetails2, GameMagang::class.java.simpleName)
                 addToBackStack(null)
                 commit()
             }
         }
         if(v?.id == R.id.magang3){
-            val jobdetails1 = EventComunitiyMagang()
+            val jobdetails3 = EventComunitiyMagang()
             val fragmentManager = parentFragmentManager
             fragmentManager.beginTransaction().apply {
-                replace(R.id.frame_container, jobdetails1, EventComunitiyMagang::class.java.simpleName)
+                replace(R.id.frame_container, jobdetails3, EventComunitiyMagang::class.java.simpleName)
                 addToBackStack(null)
                 commit()
             }
         }
         if(v?.id == R.id.magang4){
-            val jobdetails2 = MarketingCommunications()
+            val jobdetails4 = MarketingCommunications()
             val fragmentManager = parentFragmentManager
             fragmentManager.beginTransaction().apply {
-                replace(R.id.frame_container, jobdetails2, MarketingCommunications::class.java.simpleName)
+                replace(R.id.frame_container, jobdetails4, MarketingCommunications::class.java.simpleName)
                 addToBackStack(null)
                 commit()
             }

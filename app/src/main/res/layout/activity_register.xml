@@ -116,26 +116,8 @@
             android:padding="13dp"
             android:id="@+id/txt_punyaakun"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="atau"
-            android:fontFamily="@font/poppins_bold"
-            android:textSize="12sp"
-            android:textColor="@color/black"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:id="@+id/text_atau"/>
 
     </LinearLayout>
-
-    <ImageButton
-        android:layout_width="173dp"
-        android:layout_height="41dp"
-        android:layout_below="@id/ly_2"
-        android:layout_marginTop="0dp"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/signgoogle" />
 
 
 </RelativeLayout>

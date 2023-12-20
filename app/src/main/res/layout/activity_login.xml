@@ -67,6 +67,8 @@
             android:backgroundTint="@color/loginbutton"
             android:id="@+id/text_katasandi"
             />
+
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -78,7 +80,6 @@
             android:layout_gravity="end"
             android:id="@+id/txt_lupakatasandi"/>
 
-
     </LinearLayout>
 
     <Button
@@ -88,6 +89,7 @@
         android:layout_below="@+id/ly_1"
         android:layout_centerHorizontal="true"
         android:width="350dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/button_login"
         android:fontFamily="@font/poppins_bold"
         android:text="Masuk"
@@ -113,16 +115,7 @@
             android:padding="13dp"
             android:id="@+id/txt_akunbaru"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="atau"
-            android:fontFamily="@font/poppins_bold"
-            android:textSize="12sp"
-            android:textColor="@color/black"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:id="@+id/text_atau"/>
+
 
     </LinearLayout>
 
@@ -134,6 +127,7 @@
         android:layout_centerHorizontal="true"
         android:background="@drawable/signgoogle"
         android:id="@+id/btn_signin"/>
+
 
 
 </RelativeLayout>

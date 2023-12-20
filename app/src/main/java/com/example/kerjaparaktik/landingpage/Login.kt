@@ -75,8 +75,6 @@ class Login : AppCompatActivity() {
         }
 
 
-
-
         txt_akunbaru.setOnClickListener {
             val intent = Intent(this@Login, Register::class.java)
             startActivity(intent)
@@ -86,6 +84,7 @@ class Login : AppCompatActivity() {
             val intent = Intent(this@Login, ForgotPass::class.java)
             startActivity(intent)
         }
+
     }
 
     private fun displayPopupDialog() {

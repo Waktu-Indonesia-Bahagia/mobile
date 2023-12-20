@@ -7,10 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import com.example.kerjaparaktik.R
-import com.example.kerjaparaktik.profile.ProfileFragment
 
 
-class pendaftaran2 : Fragment(), View.OnClickListener {
+class Pendaftaran2 : Fragment(), View.OnClickListener {
     // TODO: Rename and change types of parameters
 
     override fun onCreateView(

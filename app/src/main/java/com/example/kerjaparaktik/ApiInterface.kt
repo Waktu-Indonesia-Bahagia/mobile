@@ -52,4 +52,19 @@ interface ApiInterface {
         @Field("nama") nama: String,
         @Field("email") email: String
     ): Call<ApiResponse>
+
+    @FormUrlEncoded
+    @POST("pendaftaran.php")
+    fun performPendaftaran(
+        @Field("nama") nama: String,
+        @Field("asal_kampus") asal_kampus: String,
+        @Field("no_telp") no_telp: String,
+        @Field("email") email: String,
+        @Field("magang") magang: String,
+        @Field("posisi") posisi: String,
+        @Field("ktp") ktp: String,
+        @Field("ktm") ktm: String,
+        @Field("surat_permohonan") surat_permohonan: String
+    ): Call<ApiResponse>
+
 }
