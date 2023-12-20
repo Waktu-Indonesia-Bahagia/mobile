@@ -28,12 +28,12 @@ class MobileMagang : Fragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val btnDaftar: Button = view.findViewById(R.id.btn_daftar)
+        val btnDaftar: Button = view.findViewById(R.id.btnDaftar)
         btnDaftar.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
-        if(v?.id == R.id.btn_daftar){
+        if(v?.id == R.id.btnDaftar){
             val pendaftaranFragment= PendaftaranFragment()
             val fragmentManager = parentFragmentManager
             fragmentManager.beginTransaction().apply {

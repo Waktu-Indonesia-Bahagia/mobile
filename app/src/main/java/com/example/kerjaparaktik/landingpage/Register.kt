@@ -10,7 +10,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.kerjaparaktik.ApiInterface
 import com.example.kerjaparaktik.ApiResponse
 import com.example.kerjaparaktik.R
-import com.example.kerjaparaktik.RetrofitClient
+import com.example.kerjaparaktik.notification.NotificationData
+import com.example.kerjaparaktik.profile.UbahSandiFragment
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -36,6 +37,14 @@ class Register : AppCompatActivity() {
             val passwordInput = password.text.toString()
             val emailInput = email.text.toString()
 
+            val fragment = UbahSandiFragment()
+            val bundle = Bundle()
+            bundle.putString("email",emailInput)
+            fragment.arguments = bundle
+
+            val notification = NotificationData("Selamat","datang di Aplikasi Kami ini,Aplikasi inibertujuan bagi Mahasiswa yang ingin kerja praktik")
+            senDataNotification(notification)
+
             val call: Call<ApiResponse> = apiInterface.performUserSignIn(nameInput, passwordInput, emailInput)
             call.enqueue(object : Callback<ApiResponse> {
                 override fun onResponse(call: Call<ApiResponse>, response: Response<ApiResponse>) {
@@ -58,6 +67,7 @@ class Register : AppCompatActivity() {
 
                 override fun onFailure(call: Call<ApiResponse>, t: Throwable) {
                     // Handle failure here
+                    t.printStackTrace()
                 }
             })
         }
@@ -66,6 +76,26 @@ class Register : AppCompatActivity() {
             val intent = Intent(this@Register, Login::class.java)
             startActivity(intent)
         }
+    }
+
+    private fun senDataNotification(notification: NotificationData) {
+        val call: Call<Void> = apiInterface.notification(notification.title, notification.message)
+        call.enqueue(object : Callback<Void> {
+            override fun onResponse(call: Call<Void>, response: Response<Void>) {
+                if (response.isSuccessful) {
+                    // Data berhasil dikirim
+                    println("Data berhasil dikirim ke server.")
+                } else {
+                    // Gagal mengirim data
+                    println("Gagal mengirim data ke server. ${response.errorBody()}")
+                }
+            }
+
+            override fun onFailure(call: Call<Void>, t: Throwable) {
+                // Handle failure here
+                t.printStackTrace()
+            }
+        })
     }
 
     override fun onBackPressed() {

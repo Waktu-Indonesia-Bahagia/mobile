@@ -21,7 +21,7 @@ class ChatbotFragment : Fragment() {
         webSettings.javaScriptEnabled = true
 
         // URL chatbot Watson Assistant
-        val chatbotUrl = "https://web-chat.global.assistant.watson.appdomain.cloud/preview.html?backgroundImageURL=https%3A%2F%2Fus-south.assistant.watson.cloud.ibm.com%2Fpublic%2Fimages%2Fupx-9be5a095-c16c-4d73-94d5-e9e98a7090c6%3A%3A7ad391ce-4f49-4bf7-8963-432ba7135369&integrationID=ca559c37-423b-413a-a692-2ea495c9cb52&region=us-south&serviceInstanceID=9be5a095-c16c-4d73-94d5-e9e98a7090c6"
+        val chatbotUrl = "https://novaazzahra4.github.io/chatbot_website/"
 
         // Load URL chatbot
         webView.loadUrl(chatbotUrl)

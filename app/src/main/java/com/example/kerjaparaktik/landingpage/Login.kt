@@ -16,7 +16,6 @@ import com.example.kerjaparaktik.ApiInterface
 import com.example.kerjaparaktik.ApiResponse
 import com.example.kerjaparaktik.MainActivity
 import com.example.kerjaparaktik.R
-import com.example.kerjaparaktik.RetrofitClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.kerjaparaktik.R
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class HomeFragment : Fragment(), View.OnClickListener {
     override fun onCreateView(
@@ -35,9 +36,22 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
         val ivmagang4: ImageView = view.findViewById(R.id.magang4)
         ivmagang4.setOnClickListener(this)
+
+        val floatingBtn: FloatingActionButton = view.findViewById(R.id.fabChatbot)
+        floatingBtn.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
+        if(v?.id == R.id.fabChatbot){
+            val chatBot= ChatbotFragment()
+            val fragmentManager = parentFragmentManager
+            fragmentManager.beginTransaction().apply {
+                replace(R.id.frame_container,chatBot, ChatbotFragment::class.java.simpleName)
+                addToBackStack(null)
+                commit()
+            }
+        }
+
         if(v?.id == R.id.tv_lihatSemua){
             val listMagang= ListMagang()
             val fragmentManager = parentFragmentManager

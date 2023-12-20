@@ -37,10 +37,10 @@ class NotificationFragment : Fragment() {
     }
 
     private fun addDataToList() {
-        mList.add(NotificationData(HtmlCompat.fromHtml("<b>Selamat datang</b> di Aplikasi Kami, Aplikasi Kami ini bertujuan bagi Mahasiswa yang ingin kerja praktik.", HtmlCompat.FROM_HTML_MODE_LEGACY)))
-        mList.add(NotificationData(HtmlCompat.fromHtml("<b>Pendaftaran</b> Anda sedang diproses oleh Pihak Instansi.", HtmlCompat.FROM_HTML_MODE_LEGACY)))
-        mList.add(NotificationData(HtmlCompat.fromHtml("<b>Profile</b> Anda berhasil diubah.", HtmlCompat.FROM_HTML_MODE_LEGACY)))
-        mList.add(NotificationData(HtmlCompat.fromHtml("<b>Selamat</b> Anda berhasil diterima oleh Pihak Instansi.",HtmlCompat.FROM_HTML_MODE_LEGACY)))
+        mList.add(NotificationData("Selamat" ,"datang</b> di Aplikasi Kami, Aplikasi Kami ini bertujuan bagi Mahasiswa yang ingin kerja praktik."))
+        mList.add(NotificationData("Pendaftaran","</b> Anda sedang diproses oleh Pihak Instansi."))
+        mList.add(NotificationData("Profile","</b> Anda berhasil diubah."))
+        mList.add(NotificationData("Selamat","</b> Anda berhasil diterima oleh Pihak Instansi."))
     }
 
 //    override fun onClick(v: View?) {

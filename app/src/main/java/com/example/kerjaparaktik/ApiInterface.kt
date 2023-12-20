@@ -5,6 +5,7 @@ import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.PUT
 
 interface ApiInterface {
     @FormUrlEncoded
@@ -18,9 +19,23 @@ interface ApiInterface {
 
     @FormUrlEncoded
     @POST("login.php")
-    fun performUserLogin(
-        @Field("name") name: String, @Field("password") password: String
+    fun performUserLogin(@Field("name") name: String, @Field("password") password: String): Call<ApiResponse>
+
+    @FormUrlEncoded
+    @PUT("reset-password.php")
+    fun performResetPassword(
+        @Field("old_password") old_password: String,
+        @Field("new_password") new_password: String,
+        @Field("conform_password") conform_password: String,
+        @Field("email") email: String
     ): Call<ApiResponse>
+
+    @FormUrlEncoded
+    @POST("notifikasi.php")
+    fun notification(
+        @Field("title") title: String,
+        @Field("message") message: String
+    ): Call<Void>
 
     @FormUrlEncoded
     @POST("edit.php")
@@ -37,5 +52,4 @@ interface ApiInterface {
         @Field("nama") nama: String,
         @Field("email") email: String
     ): Call<ApiResponse>
-
 }
