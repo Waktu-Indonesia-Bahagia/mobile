@@ -47,6 +47,7 @@ class Login : AppCompatActivity() {
         btn_login.setOnClickListener {
             val nameInput = name.text.toString()
             val passwordInput = password.text.toString()
+
             val call: Call<ApiResponse> = apiInterface.performUserLogin(nameInput, passwordInput)
             call.enqueue(object : Callback<ApiResponse> {
                 override fun onResponse(call: Call<ApiResponse>, response: Response<ApiResponse>) {

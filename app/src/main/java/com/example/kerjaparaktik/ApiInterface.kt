@@ -22,12 +22,11 @@ interface ApiInterface {
     fun performUserLogin(@Field("name") name: String, @Field("password") password: String): Call<ApiResponse>
 
     @FormUrlEncoded
-    @PUT("reset-password.php")
+    @POST("reset-password.php")
     fun performResetPassword(
         @Field("old_password") old_password: String,
         @Field("new_password") new_password: String,
-        @Field("conform_password") conform_password: String,
-        @Field("email") email: String
+        @Field("conform_password") conform_password: String
     ): Call<ApiResponse>
 
     @FormUrlEncoded
