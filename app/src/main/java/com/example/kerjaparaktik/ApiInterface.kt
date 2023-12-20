@@ -6,6 +6,7 @@ import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.PUT
+import retrofit2.http.Query
 
 interface ApiInterface {
     @FormUrlEncoded
@@ -35,6 +36,12 @@ interface ApiInterface {
         @Field("title") title: String,
         @Field("message") message: String
     ): Call<Void>
+
+    @GET("get-notifications.php")
+    fun getNotifications(
+        @Query("title") title: String
+    ): Call<ApiResponse>
+
 
     @FormUrlEncoded
     @POST("edit.php")

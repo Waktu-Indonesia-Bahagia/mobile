@@ -39,10 +39,10 @@ class Register : AppCompatActivity() {
 
             val fragment = UbahSandiFragment()
             val bundle = Bundle()
-            bundle.putString("email",emailInput)
+            bundle.putString("email", emailInput)
             fragment.arguments = bundle
 
-            val notification = NotificationData("Selamat","datang di Aplikasi Kami ini,Aplikasi inibertujuan bagi Mahasiswa yang ingin kerja praktik")
+            val notification = NotificationData("Selamat"," datang di Aplikasi Kami ini, Aplikasi ini bertujuan bagi Mahasiswa yang ingin kerja praktik")
             senDataNotification(notification)
 
             val call: Call<ApiResponse> = apiInterface.performUserSignIn(nameInput, passwordInput, emailInput)
@@ -61,7 +61,6 @@ class Register : AppCompatActivity() {
                         } else {
                             Toast.makeText(applicationContext, "User Already Exist....", Toast.LENGTH_SHORT).show()
                         }
-
                     }
                 }
 
@@ -79,7 +78,7 @@ class Register : AppCompatActivity() {
     }
 
     private fun senDataNotification(notification: NotificationData) {
-        val call: Call<Void> = apiInterface.notification(notification.title, notification.message)
+        val call: Call<Void> = apiInterface.notification(notification.title, "datang di Aplikasi Kami ini, Aplikasi ini bertujuan bagi Mahasiswa yang ingin kerja praktik")
         call.enqueue(object : Callback<Void> {
             override fun onResponse(call: Call<Void>, response: Response<Void>) {
                 if (response.isSuccessful) {

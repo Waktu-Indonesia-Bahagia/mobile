@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.text.HtmlCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kerjaparaktik.R
@@ -13,7 +12,7 @@ import com.example.kerjaparaktik.R
 class NotificationFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private var mList = ArrayList<NotificationData>()
-//    private lateinit var btnfilter: ImageButton
+    //    private lateinit var btnfilter: ImageButton
     private lateinit var adapter: NotificationAdapter
 
     override fun onCreateView(
@@ -37,7 +36,7 @@ class NotificationFragment : Fragment() {
     }
 
     private fun addDataToList() {
-        mList.add(NotificationData("Selamat" ,"datang</b> di Aplikasi Kami, Aplikasi Kami ini bertujuan bagi Mahasiswa yang ingin kerja praktik."))
+        mList.add(NotificationData("Selamat datang</b> di Aplikasi Kami, Aplikasi Kami ini bertujuan bagi Mahasiswa yang ingin kerja praktik." ,""))
         mList.add(NotificationData("Pendaftaran","</b> Anda sedang diproses oleh Pihak Instansi."))
         mList.add(NotificationData("Profile","</b> Anda berhasil diubah."))
         mList.add(NotificationData("Selamat","</b> Anda berhasil diterima oleh Pihak Instansi."))

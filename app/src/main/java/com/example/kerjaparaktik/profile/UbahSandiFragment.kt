@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import com.example.kerjaparaktik.ApiInterface
 import com.example.kerjaparaktik.ApiResponse
 import com.example.kerjaparaktik.R
+import com.example.kerjaparaktik.notification.NotificationData
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -55,6 +56,9 @@ class UbahSandiFragment : Fragment(), View.OnClickListener {
                 val conformPassword = conform_password.text.toString().trim()
 
                 performPasswordChange(oldPassword, newPassword, conformPassword)
+
+                val notification = NotificationData("Password"," Anda berhasil Diubah!")
+                senDataNotification(notification)
             }
 
             R.id.iv_arrow_back_sandi -> {
@@ -71,6 +75,26 @@ class UbahSandiFragment : Fragment(), View.OnClickListener {
                 }
             }
         }
+    }
+
+    private fun senDataNotification(notification: NotificationData) {
+        val call: Call<Void> = apiInterface.notification(notification.title, "Anda berhasil Diubah!")
+        call.enqueue(object : Callback<Void> {
+            override fun onResponse(call: Call<Void>, response: Response<Void>) {
+                if (response.isSuccessful) {
+                    // Data berhasil dikirim
+                    println("Data berhasil dikirim ke server.")
+                } else {
+                    // Gagal mengirim data
+                    println("Gagal mengirim data ke server. ${response.errorBody()}")
+                }
+            }
+
+            override fun onFailure(call: Call<Void>, t: Throwable) {
+                // Handle failure here
+                t.printStackTrace()
+            }
+        })
     }
 
     private fun performPasswordChange(oldPassword: String, newPassword: String, conformPassword: String) {
@@ -90,8 +114,6 @@ class UbahSandiFragment : Fragment(), View.OnClickListener {
             }
         })
     }
-
-
 
     fun showCustomToast(message: String) {
         val context = requireContext() // Mendapatkan konteks dari fragment
