@@ -36,8 +36,8 @@ class NotificationFragment : Fragment() {
     }
 
     private fun addDataToList() {
-        mList.add(NotificationData("Selamat datang</b> di Aplikasi Kami, Aplikasi Kami ini bertujuan bagi Mahasiswa yang ingin kerja praktik." ,""))
-        mList.add(NotificationData("Pendaftaran","</b> Anda sedang diproses oleh Pihak Instansi."))
+        mList.add(NotificationData("Selamat datang\ndi Aplikasi Kami, Aplikasi Kami ini bertujuan bagi Mahasiswa yang ingin kerja praktik." ,""))
+        mList.add(NotificationData("Pendaftaran","\nAnda sedang diproses oleh Pihak Instansi."))
         mList.add(NotificationData("Profile","</b> Anda berhasil diubah."))
         mList.add(NotificationData("Selamat","</b> Anda berhasil diterima oleh Pihak Instansi."))
     }

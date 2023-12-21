@@ -15,7 +15,6 @@
         android:layout_height="wrap_content"
         android:padding="8dp">
 
-
         <TextView
             android:id="@+id/textNotif"
             android:layout_width="0dp"
@@ -27,5 +26,8 @@
             android:text="Selamat datang di Aplikasi Kami,Aplikasi Kami ini bertujuan bagi Mahasiswa yang ingin kerja praktik."/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
 
 </com.google.android.material.card.MaterialCardView>

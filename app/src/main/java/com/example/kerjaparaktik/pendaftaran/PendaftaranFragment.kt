@@ -144,6 +144,9 @@ class PendaftaranFragment : Fragment() {
                                 Toast.makeText(context, "Semua data harus terisi...", Toast.LENGTH_SHORT).show()
                             }
                         }
+                        else {
+                            Toast.makeText(context, "Semua data harus terisi...", Toast.LENGTH_SHORT).show()
+                        }
                     }
                 }
 
