@@ -36,18 +36,18 @@ class NotificationFragment : Fragment() {
     }
 
     private fun addDataToList() {
+<<<<<<< HEAD
         mList.add(NotificationData("Selamat datang\ndi Aplikasi Kami, Aplikasi Kami ini bertujuan bagi Mahasiswa yang ingin kerja praktik." ,""))
         mList.add(NotificationData("Pendaftaran","\nAnda sedang diproses oleh Pihak Instansi."))
         mList.add(NotificationData("Profile","</b> Anda berhasil diubah."))
         mList.add(NotificationData("Selamat","</b> Anda berhasil diterima oleh Pihak Instansi."))
+=======
+        mList.add(NotificationData("Selamat","Selamat datang di Aplikasi Kami, Aplikasi Kami ini bertujuan bagi Mahasiswa yang ingin kerja praktik." ))
+        mList.add(NotificationData("Pendaftaran","Pendaftaran Anda sedang diproses oleh Pihak Instansi."))
+        mList.add(NotificationData("Profile","Profile Anda berhasil diubah."))
+        mList.add(NotificationData("Selamat","Selamat Anda berhasil diterima oleh Pihak Instansi."))
+>>>>>>> 21880908bc2895b4742cbf8dda5c1969db6f2e2d
     }
 
-//    override fun onClick(v: View?) {
-//        when (v?.id) {
-//            R.id.filter -> {
-//                // Tambahkan aksi yang sesuai di sini
-//                // contoh: buka fragment/filter, tampilkan dialog, atau pindah ke halaman pengaturan
-//            }
-//        }
-//    }
+
 }
