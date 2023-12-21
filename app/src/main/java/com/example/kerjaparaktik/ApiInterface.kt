@@ -1,5 +1,6 @@
 package com.example.kerjaparaktik
 
+import com.example.kerjaparaktik.notification.NotificationData
 import retrofit2.Call
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
@@ -38,9 +39,9 @@ interface ApiInterface {
     ): Call<Void>
 
     @GET("get-notifications.php")
-    fun getNotifications(
-        @Query("title") title: String
-    ): Call<ApiResponse>
+    fun getNotifications(): Call<List<NotificationData>>
+
+
 
 
     @FormUrlEncoded

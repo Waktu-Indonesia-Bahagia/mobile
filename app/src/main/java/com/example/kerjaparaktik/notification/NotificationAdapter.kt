@@ -13,6 +13,8 @@ class NotificationAdapter (private var mList: List<NotificationData>) :
 
     inner class LanguageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val title : TextView = itemView.findViewById(R.id.textNotif)
+        val message : TextView = itemView.findViewById(R.id.textMessage)
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):LanguageViewHolder {
@@ -22,6 +24,7 @@ class NotificationAdapter (private var mList: List<NotificationData>) :
 
     override fun onBindViewHolder(holder: NotificationAdapter.LanguageViewHolder, position: Int) {
         holder.title.text = mList[position].title
+        holder.message.text = mList[position].message
     }
     override fun getItemCount(): Int {
         return mList.size

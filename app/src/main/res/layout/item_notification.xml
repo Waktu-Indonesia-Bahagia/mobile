@@ -19,12 +19,24 @@
         <TextView
             android:id="@+id/textNotif"
             android:layout_width="0dp"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="Selamat"/>
+
+        <TextView
+            android:id="@+id/textMessage"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginLeft="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:text="Selamat datang di Aplikasi Kami,Aplikasi Kami ini bertujuan bagi Mahasiswa yang ingin kerja praktik."/>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
